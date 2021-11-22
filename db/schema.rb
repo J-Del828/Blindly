@@ -10,10 +10,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_22_160344) do
+ActiveRecord::Schema.define(version: 2021_11_22_170813) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "matches", force: :cascade do |t|
+    t.boolean "want_match", default: false
+    t.bigint "requester_id"
+    t.bigint "partner_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["partner_id"], name: "index_matches_on_partner_id"
+    t.index ["requester_id"], name: "index_matches_on_requester_id"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.text "content"
+    t.bigint "match_id"
+    t.bigint "relationship_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["match_id"], name: "index_messages_on_match_id"
+    t.index ["relationship_id"], name: "index_messages_on_relationship_id"
+  end
+
+  create_table "relationships", force: :cascade do |t|
+    t.bigint "partner_1_id"
+    t.bigint "partner_2_id"
+    t.integer "affinity", default: 0
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["partner_1_id"], name: "index_relationships_on_partner_1_id"
+    t.index ["partner_2_id"], name: "index_relationships_on_partner_2_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,8 +53,21 @@ ActiveRecord::Schema.define(version: 2021_11_22_160344) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "name"
+    t.integer "age"
+    t.text "biography"
+    t.string "interests"
+    t.string "gender"
+    t.string "preferred_gender"
+    t.integer "preferred_age"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "matches", "users", column: "partner_id"
+  add_foreign_key "matches", "users", column: "requester_id"
+  add_foreign_key "messages", "matches"
+  add_foreign_key "messages", "relationships"
+  add_foreign_key "relationships", "users", column: "partner_1_id"
+  add_foreign_key "relationships", "users", column: "partner_2_id"
 end

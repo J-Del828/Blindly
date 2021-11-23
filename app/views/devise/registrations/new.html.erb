@@ -35,10 +35,9 @@
       <div class='footer-signup'>
       <p> Already have an account?
       </p>
-      <button type="button" class="btn btn-secondary w-100">SIGN IN</button>
+      <%= link_to "Sign in", new_session_path(resource_name), class: "btn btn-secondary w-100" %>
       </div>
     </div>
-    <%= render "devise/shared/links" %>
   </div>
 </div>
 </div>

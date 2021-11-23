@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  #devise_for
   devise_for :users
   root to: 'pages#home'
   resource :profile, only: [ :show, :update ]

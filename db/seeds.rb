@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 User.destroy_all
 
-12.times do
-  User.new(name: User::FEMALE_NAMES.sample, interests: User::INTERESTS.sample(rand(4..8)), age: rand(20..30), gender: "Female",
+ 12.times do
+  User.create!(email: "#{rand(252...4350)}test@test.se", password: "test123", name: User::FEMALE_NAMES.sample, interests: User::INTERESTS.sample(rand(4..8)), age: rand(20..30), gender: "Female",
   biography: User::BIOGRAPHY.sample, preferred_age: rand(20..30), preferred_gender: "Male")
-end
+ end

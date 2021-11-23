@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2021_11_23_102537) do
-=======
 ActiveRecord::Schema.define(version: 2021_11_23_132339) do
->>>>>>> 3deb67e2bea644d5ee37652e8b97f809feae2ab1
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,11 +33,6 @@ ActiveRecord::Schema.define(version: 2021_11_23_132339) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["match_id"], name: "index_messages_on_match_id"
     t.index ["relationship_id"], name: "index_messages_on_relationship_id"
-  end
-
-  create_table "profiles", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "relationships", force: :cascade do |t|

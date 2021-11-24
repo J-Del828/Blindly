@@ -1,2 +1,36 @@
-<h1> hello</h1>
-<h1><%= @user.email %></h1>
+<div class='container'>
+<div class='wrapper'>
+<h5>interests</h5>
+<ul>
+<li><%= simple_form_for(@user) do |f| %></li>
+<%#= f.association User::INTERESTS,
+                  as: :check_boxes,
+                  input_html: { class: "tag-selector" },
+                  item_wrapper_class: 'tag-item' %>
+<div class='card-interests'>
+<%= f.input :interests,:collection => User::INTERESTS,:label => "" ,:include_blank => false, as: :check_boxes, input_html: { class: "tag-selector" },
+                  item_wrapper_class: 'tag-item' %>
+</div>
+</ul>
+<%= f.input :name,
+                    required: true,
+                    label: "age",
+                    autofocus: true,
+                    input_html: { autocomplete: "age", class: 'input' }%>
+<%= f.input :gender,
+                    required: true,
+                    label: "Gender",
+                    autofocus: true,
+                    input_html: { autocomplete: "Gender", class: 'input' }%>
+<input type="email" class="form-control" id="floatingInput" placeholder="preferred age">
+<br>
+<input type="email" class="form-control" id="floatingInput" placeholder="preferred gender">
+<br>
+<label for="exampleFormControlTextarea1" class="form-label">Biograph</label>
+<textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+<div class="form-actions">
+          <%= f.button :submit, "save profile", class:'submit-button-btn btn-primary' %>
+</div>
+<% end %>
+</div>
+</div>

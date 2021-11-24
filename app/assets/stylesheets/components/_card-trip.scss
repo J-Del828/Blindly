@@ -1,0 +1,58 @@
+.card-trip {
+  position: relative;
+  display: grid;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  height: 95vh;
+}
+
+.card-trip > img {
+  margin: auto;
+  height: 250px;
+  width: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.card-trip h2 {
+  font-size: 36px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-trip p {
+  font-size: 16px;
+  opacity: .7;
+  margin: 0;
+}
+
+
+.card-trip .card-trip-infos {
+  margin-top: 0px;
+  margin-bottom: 100px;
+  padding: 16px;
+  justify-content: space-between;
+  align-items: flex-end;
+  text-align: center;
+  position: relative;
+}
+
+.shared-interests {
+  background-color: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  height: 120px;
+
+}
+.shared-interests ul {
+  background-color: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  height: 120px;
+  column-count: 2;
+}
+.choice-card {
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}

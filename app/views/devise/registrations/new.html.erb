@@ -1,6 +1,6 @@
 <div class='sign-up-card'>
 <div class='row justify-content-center'>
-  <div class='col-4 form-container' >
+  <div class='col-10 form-container' >
   <div class='inside-navbar'>
     <h2>Sign up</h2>
     </div>
@@ -12,6 +12,11 @@
         <%= f.input :name,
                       required: true,
                       label: "Username",
+                      autofocus: true,
+                      input_html: { autocomplete: "name", class: 'input' }%>
+        <%= f.input :name,
+                      required: true,
+                      label: "Age",
                       autofocus: true,
                       input_html: { autocomplete: "name", class: 'input' }%>
           <%= f.input :email,

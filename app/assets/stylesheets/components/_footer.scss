@@ -1,0 +1,38 @@
+.body {
+    position: relative;
+}
+
+.bottom-bar {
+    height: 60px;
+    color: white;
+    position: absolute;
+    bottom: 0;
+}
+
+.footer-links {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.footer-links a {
+    color: rgb(0, 0, 0);
+    opacity: 0.90;
+    text-decoration: none;
+    font-size: 60px;
+    padding: 0px 10px;
+}
+
+.footer-links a:hover {
+    opacity: 1;
+    color: #4C0F8E;
+}
+
+.blindly-mask {
+    background-image: url("blindly-mask.png");
+    height: 75px;
+    width: 112px;
+    background-size: cover;
+    background-position: center;
+}

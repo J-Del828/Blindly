@@ -10,6 +10,9 @@ class User < ApplicationRecord
                "Volunteering", "Hiking", "Working Out", "Traveling", "Finance/Investing", "Meditation/Yoga", "Sports",
                "Clubbing/Partying",
                "Technology", "Movies/Series"]
+  INTERESTS_ICONS = {
+    "Dancing" => "fa-dance"
+  }
   FEMALE_NAMES = ["Gabriella", "Alva", "Terese", "Gudrun", "Anna", "Monika", "Susanna", "Lea", "Siri", "Laila", "Tilda",
                   "Judit"]
   BIOGRAPHY = ["Subtly charming music aficionado. Lifelong alcohol fan. Avid entrepreneur. Devoted LotR nerd.

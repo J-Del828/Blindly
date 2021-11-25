@@ -1,19 +1,27 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
-
+<div class='sign-up-card'>
+<div class='row justify-content-center'>
+  <div class='col-8 form-container' >
+  <div class='inside-navbar'>
+    <h2>Edit <%= resource_name.to_s.humanize %></h2>
+  </div>
+<div class='simple-form-container'>
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
     <%= f.input :email, required: true, autofocus: true %>
-
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
     <% end %>
-
     <%= f.input :password,
                 hint: "leave it blank if you don't want to change it",
                 required: false,
-                input_html: { autocomplete: "new-password" } %>
+                input_html: { autocomplete: "new-password", class: 'edit-input' } %>
+    <%= f.input :name,
+                hint: "leave it blank if you don't want to change it",
+                required: false,
+                label: "Username",
+                input_html: { autocomplete: "new-name", class: 'edit-input' } %>
     <%= f.input :password_confirmation,
                 required: false,
                 input_html: { autocomplete: "new-password" } %>
@@ -28,8 +36,45 @@
   </div>
 <% end %>
 
-<h3>Cancel my account</h3>
-
+<div class='paragraph'>
 <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+</div>
 
 <%= link_to "Back", :back %>
+</div>
+  </div>
+</div>
+</div>
+
+<!--
+<div class= form-container>
+<div class='row justify-content-center'>
+<form>
+  <div class="col-12">
+<div class='header'>
+    <label for="exampleInputEmail1" class="form-label">Create your profile here</label>
+    </div>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <div id="emailHelp" class="form-text">We'll never share your email.</div>
+  </div>
+  <div class="col-12">
+    <label for="exampleInputPassword1" class="form-label">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1">
+  </div>
+  <div class="col-12">
+    <label for="exampleInputPassword1" class="form-label">Select Gender</label>
+    <input type="password" class="form-control" id="exampleInputPassword1">
+  </div>
+  <div class="col-12">
+    <label for="exampleInputPassword1" class="form-label">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1">
+  </div>
+  <div class="col-12">
+    <label for="exampleInputPassword1" class="form-label">interests</label>
+    <input type="password" class="form-control" id="exampleInputPassword1">
+  </div>
+  <br>
+  <button type="submit" class="btn btn-primary">Save Profile</button>
+</form>
+</div>
+</div>

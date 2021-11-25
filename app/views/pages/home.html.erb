@@ -2,7 +2,9 @@
   <div>
     <h1><strong>Blindly</strong></h1>
     <p>Do you dare to step out of your comfort zone? </p>
-    <button type='button' class='btn btn-outline-light btn-lg'>Sign Up</button>
+    <%= link_to new_user_registration_path do %>
+      <button type='button' class='btn btn-outline-light btn-lg'>Sign Up</button>
+    <% end %>
   </div>
 </div>
 

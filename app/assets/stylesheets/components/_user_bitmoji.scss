@@ -1,0 +1,39 @@
+body{
+  background-color: #EDEDED;
+}
+.avatar_user{
+  margin-top: 40px;
+  width: 250px;
+  height: 250px;
+  background-color: #D5D5D5;
+  border-radius: 100%;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.fa-user-edit{
+font-size: 40px;
+color: purple;
+}
+
+.header {
+  display: flex;
+align-items: center;
+justify-content: space-around;
+margin-right: 20px;
+}
+
+.fa-male{
+  font-size: 40px;
+  margin: 15px;
+}
+
+.description {
+  margin: 10px
+}
+
+.column {
+  column-count: 2;
+
+}

@@ -1,1 +1,30 @@
-<h1>hello</h1>
+<div class="text-center">
+  <%= image_tag "Bitmoji.png", class: "avatar_user", alt: "avatar" %>
+  <div>
+    <i class="fas fa-user-edit"></i>
+  </div>
+</div>
+<br>
+<br>
+  <div class='header'>
+    <i class="fas fa-male"></i>
+      <h1>John Connor</h1>
+        <h3>28</h3>
+  </div>
+<hr>
+<div class='description'>
+  <p>Hi im a guy who got the looks like Elvis and and the money from my grandma
+    I like to take long walks in the rain with no clothes on and scream at homeless cats,
+      dare to go on a date?</p>
+</div>
+<hr>
+<div>
+  <h6><strong>My interests</strong></h6>
+  <div class='row'>
+    <% User::INTERESTS.each do |interest| %>
+      <div class="col-6">
+        <%= interest %>
+      </div>
+     <% end %>
+    </div>
+</div>

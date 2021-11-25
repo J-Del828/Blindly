@@ -7,12 +7,12 @@ width: 80%;
 }
 
 .wrapper {
-  background-color: purple;
+  background-color: #6D8299;
   border-radius: 5px;
   padding: 10px;
 }
 
-.btn {
+.btn-success {
   display: flex;
 margin-left: auto;
 margin-right: auto;
@@ -27,4 +27,12 @@ ul {
   display:inline-block;
   column-count: 2;
 
+}
+
+.col-form-label{
+  display: none !important;
+}
+
+.form-control {
+border-radius: 5px;
 }

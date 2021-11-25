@@ -7,8 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 User.destroy_all
 
-john = User.new(email: "john@blindly.se", password: "test123", name: "John", age: 25, gender: "Male", preferred_gender: "Female")
-john.save
+john = User.new(email: "john@blindly.se", password: "test123", name: "John", age: 25, gender: "Male", preferred_gender: "Female", preferred_age: rand(20..30), interests: User::INTERESTS.sample(rand(4..8)))
+john.save!
 
 female_names = ["Gabriella", "Alva", "Terese", "Gudrun", "Anna", "Monika", "Susanna", "Lea", "Siri", "Laila", "Tilda",
                   "Judit"]
@@ -24,17 +24,15 @@ biography =   ["Subtly charming music aficionado. Lifelong alcohol fan. Avid ent
                "Ranked in top 10 on Pokémon Go in Sweden, wanna compare collections? Looking for a handyman to help me
                renovate my newly bought house!",
                "Currently studying to become a nurse which is really intense, so I'm looking for a man who can work
-               around the house while I'm studying. I'm half-portugese so I can teach you some bad words in Portuguese
-               when I'm not studying",
+               around the house while I'm studying.",
                "Self-proclaimed cat-mommy. I have cats of 8 differents races, if you love cats as much as I do perhaps
                I will introduce you to them",
                "Currently enrolled in a coding bootcamp so if you are a developer that's a huge plus. Otherwise you can
-               cook for me while I'm practicing my coding. I'm living on the countryside so I would prefer a man who
-               is comfortable with a hammer in his hand.",
+               cook for me while I'm practicing my coding.",
                "I live alone with 2 dogs, do you wanna be their dad?",
                "I've traveled to over 120 countries, guess one that I didn't visit!"]
 
- 12.times do
-  User.create(email: "#{rand(252...4350)}test@test.se", password: "test123", name: female_names.sample, interests: User::INTERESTS.sample(rand(4..8)), age: rand(20..30), gender: "Female",
+ 150.times do
+  User.create(email: "#{rand(252...4350)}test@test.se", password: "test123", name: female_names.sample, interests: User::INTERESTS.sample(rand(2..12)), age: rand(20..30), gender: "Female",
   biography: biography.sample, preferred_age: rand(20..30), preferred_gender: "Male")
  end

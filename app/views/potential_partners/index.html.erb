@@ -1,20 +1,26 @@
 <div class="cards">
-  <%  @users.each do |user| %>
+  <%  @potential_partners.each do |partner| %>
     <div class="card-trip">
       <div class="shared-interests">
-        <ul>
-          <% user.interests.each do |interest| %>
-            <li><%= interest + ","%></li>
-          <% end %>
-        </ul>
+        <% partner.common_interests.each do |interest| %>
+          <div class="button mt-2">
+            <%= interest %>
+          </div>
+        <% end %>
       </div>
-      <img src="https://e7.pngegg.com/pngimages/274/250/png-clipart-bitstrips-female-woman-girl-bitmoji-child-face-thumbnail.png" class="card-trip-user avatar-bordered" />
+      <div class="matching-percentage">
+        <h4><strong><%= partner.matching_percentage %>%</strong></h4>
+      </div>
+      <img src="https://elbespurling.com/tbm/wp-content/uploads/2019/02/NwUcCmG.png" class="card-trip-user avatar-bordered" />
       <div class="card-trip-infos">
         <div>
-          <h2><%= user.name %>, <%= user.age %></h2>
-          <p><em><%= user.biography %></em></p>
+          <h2><%= partner.name %>, <%= partner.age %></h2>
+          <p><em><%= partner.biography %></em></p>
         </div>
         <div class="choice-card">
+          <%= button_to potential_partner_matches_path(partner), params: { want: true } do %>
+            <span>click me</span>
+          <% end %>
           <i class="fas fa-times-circle fa-5x"></i>
           <i class="fab fa-gratipay fa-5x"></i>
         </div>

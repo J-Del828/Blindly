@@ -1,6 +1,6 @@
 class RelationshipsController < ApplicationController
 
   def index
-    @relationships = current_user.matches
+    @relationships = current_user.relationships
   end
 end

@@ -4,7 +4,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :matches
-  has_many :relationships
   validates :name, :age, :gender, presence: true
   
   INTERESTS = ["Dancing", "Cooking", "Baking", "Gardening", "Photography", "Painting", "Drawing", "Singing", "Reading",
@@ -26,5 +25,12 @@ class User < ApplicationRecord
             age: (preferred_age - age_range)..(preferred_age + age_range)).
       where("matching_percentage >= #{minimum}").
       where.not(id: id)
+  end
+
+  def relationships
+    Relationship.where(
+      "partner_1_id = :user_id OR partner_2_id = :user_id",
+      user_id: id
+    )
   end
 end

@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   resource :profile, only: [ :show, :update ]
   resources :potential_partners, only: [ :index ] do
-    resources :matches, only: [ :create ]
+  resources :matches, only: [ :create ]
   end
   resources :relationships, only: [ :index, :show, :update, :destroy ]
   resources :messages, only: [ :create ]

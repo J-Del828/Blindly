@@ -1,14 +1,15 @@
 <div class="convos-container">
   <div>
-    <% @relationships.each do |match| %>
-      <% raise %>
-    <div class="card-product">
-      <img src="#">
-      <div class="card-product-infos">
-        <h2>match.name</h2>
-        <% match messages %>
+    <% @relationships.each do |relationship| %>
+      <div class="card-product">
+        <div class="chat-pic-div">
+          <%= image_tag "pp.png", class: "chat-pic" %>
+        </div>
+        <div class="card-product-infos">
+          <h2><%= relationship.partner_1.name %></h2>
+          <p>Hi! How are you?</p>
+        </div>
       </div>
-    </div>
-
+    <% end %>
   </div>
 </div>

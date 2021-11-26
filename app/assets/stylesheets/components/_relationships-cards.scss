@@ -1,17 +1,26 @@
+.convos-container {
+    min-height: calc(100vh - 86px - 90px);
+    background-color: whitesmoke;
+}
+
+div.card-product {
+    background: #9c59e4;
+}
+
 .card-product {
     overflow: hidden;
     height: 120px;
     width: 100vw;
-    background: white;
+    color: white;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     display: flex;
     align-items: center;
 }
 
-.card-product img {
-    height: 100%;
-    width: 120px;
-    object-fit: cover;
+img.chat-pic {
+    height: 100px;
+    padding: 10px;
+    border-radius: 50%;
 }
 
 .card-product h2 {

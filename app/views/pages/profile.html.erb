@@ -1,0 +1,40 @@
+<div class='container'>
+<div class='wrapper'>
+<h5>Interests</h5>
+<ul>
+<%= simple_form_for(@user) do |f| %>
+<%#= f.association User::INTERESTS,
+                  as: :check_boxes,
+                  input_html: { class: "tag-selector" },
+                  item_wrapper_class: 'tag-item' %>
+<div class='card-interests'>
+<%= f.input :interests,:collection => User::INTERESTS,:label => false ,:include_blank => false, as: :check_boxes, input_html: { class: "tag-selector" },
+                  item_wrapper_class: 'tag-item' %>
+</div>
+</ul>
+<%= f.input :age,
+                    label: "Age:",
+                    autofocus: true,
+                    input_html: { class: 'input' }%>
+<%= f.input :preferred_age, :collection => ["18-22","22-26","26-30","30-34","34-38"],
+                    label: "preferred_age:",
+                    autofocus: true,
+                    input_html: { class: 'input' }%>
+<%= f.input :gender, :collection => ["male", "female"],
+                    label: "Your Gender:",
+                    autofocus: true,
+                    input_html: { autocomplete: "Your Gender", class: 'input' }%>
+<%= f.input :preferred_gender, :collection => ["male", "female"],
+                    label: "Preffered Gender:",
+                    autofocus: true,
+                    input_html: { autocomplete: "Preffered Gender", class: 'input' }%>
+<%= f.input :biography,
+                    label: "Biography:",
+                    autofocus: true,
+                    input_html: { class: 'input' }%>
+
+          <%= f.button :submit, "save profile", class:'submit-button-btn btn-success' %>
+</div>
+<% end %>
+</div>
+</div>

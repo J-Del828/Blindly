@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   resources :relationships, only: [ :index, :show, :update, :destroy ]
   resources :messages, only: [ :create ]
   resources :users, only: [ :show ]
+  get '/user_profile', to: 'pages#profile'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

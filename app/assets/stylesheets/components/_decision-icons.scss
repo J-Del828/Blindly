@@ -1,6 +1,10 @@
-.fa-gratipay {
-      color: limegreen;
-    }
-.fa-times-circle {
-      color: red;
-    }
+.cross-icon {
+  color: red;
+}
+.heart-icon {
+  color: limegreen;
+}
+.match-button button[type="submit"] {
+  border: none;
+  background: transparent;
+}

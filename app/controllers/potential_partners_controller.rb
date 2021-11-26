@@ -1,7 +1,6 @@
 class PotentialPartnersController < ApplicationController
   def index
     @potential_partners = current_user.potential_partners
-    @positive_match = Match.new(want_match: true)
   end
 
   # user = User.find()

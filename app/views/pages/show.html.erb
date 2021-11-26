@@ -21,9 +21,11 @@
 <div>
   <h6><strong>My interests</strong></h6>
   <div class='row'>
-    <% User::INTERESTS.each do |interest| %>
+    <% User::INTERESTS.first(7).each do |interest| %>
       <div class="col-6">
-        <%= interest %>
+        <div class='custom-tag'>
+          <%= interest %>
+        </div>
       </div>
      <% end %>
     </div>

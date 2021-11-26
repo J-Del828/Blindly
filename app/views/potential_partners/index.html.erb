@@ -18,11 +18,12 @@
           <p><em><%= partner.biography %></em></p>
         </div>
         <div class="choice-card">
-          <%= button_to potential_partner_matches_path(partner), params: { want: true } do %>
-            <span>click me</span>
+          <%= button_to potential_partner_matches_path(partner), params: { want: false }, form_class: "match-button" do %>
+            <i class="fas fa-times-circle fa-5x cross-icon"></i>
           <% end %>
-          <i class="fas fa-times-circle fa-5x"></i>
-          <i class="fab fa-gratipay fa-5x"></i>
+          <%= button_to potential_partner_matches_path(partner), params: { want: true }, form_class: "match-button" do %>
+            <i class="fab fa-gratipay fa-5x heart-icon"></i>
+          <% end %>
         </div>
       </div>
     </div>

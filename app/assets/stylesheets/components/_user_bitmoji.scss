@@ -1,0 +1,51 @@
+body{
+  background-color: #EDEDED;
+}
+.avatar_user{
+  margin-top: 40px;
+  width: 250px;
+  height: 250px;
+  background-color: #D5D5D5;
+  border-radius: 100%;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.fa-user-edit::before{
+font-size: 40px;
+color: #595260;
+}
+
+.fa-user-edit:after{
+  color: #193498;
+}
+
+.header {
+  display: flex;
+align-items: center;
+justify-content: space-around;
+margin-right: 40px;
+}
+
+.fa-male{
+  font-size: 40px;
+  margin: 15px;
+}
+
+.fa-female{
+  font-size: 40px;
+  margin: 15px;
+}
+
+.description {
+  margin: 10px
+}
+
+.column {
+  column-count: 2;
+}
+
+h6 {
+  margin-left: 5%;
+}

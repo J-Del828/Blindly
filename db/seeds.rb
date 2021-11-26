@@ -6,8 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 Relationship.destroy_all
-User.destroy_all
 Match.destroy_all
+User.destroy_all
 
 john = User.new(email: "john@blindly.se", password: "test123", name: "John", age: 25, gender: "Male", preferred_gender: "Female", preferred_age: 25, interests: ["Drawing", "Working Out", "Movies", "Partying", "Meditation", "Technology"])
 john.save!

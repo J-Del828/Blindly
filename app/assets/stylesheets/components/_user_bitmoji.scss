@@ -12,19 +12,28 @@ body{
 
 }
 
-.fa-user-edit{
+.fa-user-edit::before{
 font-size: 40px;
-color: purple;
+color: #595260;
+}
+
+.fa-user-edit:after{
+  color: #193498;
 }
 
 .header {
   display: flex;
 align-items: center;
 justify-content: space-around;
-margin-right: 20px;
+margin-right: 40px;
 }
 
 .fa-male{
+  font-size: 40px;
+  margin: 15px;
+}
+
+.fa-female{
   font-size: 40px;
   margin: 15px;
 }
@@ -35,5 +44,8 @@ margin-right: 20px;
 
 .column {
   column-count: 2;
+}
 
+h6 {
+  margin-left: 5%;
 }

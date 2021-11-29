@@ -1,27 +1,24 @@
-<div class="banner" style="background-image: url(<%= image_path('blindly-bkg.png') %>);">
+<div class="banner" style="background-image: url(<%= image_path('blindly-bkg-pro.png') %>);">
   <div>
-    <h1><strong>Blindly</strong></h1>
-    <p>Do you dare to step out of your comfort zone? </p>
+    <div class="logo-image" style="background-image: url(<%= image_path('blindly-logo-white.png') %>);"></div>
+    <%# <h1><strong>Blindly</strong></h1> %>
+    <p class="mb-3">Do you dare to step out of your comfort zone? </p>
     <%= if !user_signed_in?
       link_to new_user_registration_path do %>
-      <button type='button' class='btn btn-outline-light btn-lg'>Sign Up</button>
+      <button type='button' class='btn btn-outline-light btn-lg mb-4'>Sign Up</button>
       <%= link_to new_user_session_path do %>
-        <button type='button' class='btn btn-outline-light btn-lg'>Log In</button>
+        <button type='button' class='btn btn-outline-light btn-lg mb-4'>Log In</button>
+          <% end %>
+        <% end %>
       <% end %>
-    <% end %>
-  <% end %>
-</div>
-</div>
-<div class="hp-cards-container">
-  <div class="hp-cards">
-    <div class="card-category text-center" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path('find.png') %>)">
-      Step 1: Find a potential partner based on common interests.
-    </div>
-    <div class="card-category text-center" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path('chat.png') %>)">
-      Step 2: Get to know one another.
-    </div>
-    <div class="card-category text-center" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path('meet.png') %>)">
-      Step 3: Meet up in the real world.
-    </div>
+  </div>
+  <div class="path">
+    <i class="fas fa-search"></i>
+    <h6>Find a potential partner based on common interests.</h6>
+    <i class="fas fa-link"></i>
+    <h6>Get to know one another and stengthen your connection.</h6>
+    <i class="fas fa-heart"></i>
+    <h6>Decide to meet up in the real world.</h6>
   </div>
 </div>
+

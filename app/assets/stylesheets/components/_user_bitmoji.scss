@@ -40,13 +40,32 @@ margin-right: 40px;
 }
 
 .description {
-  margin: 10px
+  margin: 10px;
 }
 
 .column {
   column-count: 2;
 }
 
-h6 {
+h5 {
   margin-left: 5%;
+  margin-top: 0%;
+
+}
+
+.Bio {
+margin-left: 15px;
+
+}
+
+.p-4 {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+padding: 0.2rem !important;
+}
+
+.profile-card {
+  border-bottom: 2px dotted rgb(49, 22, 22);
+  margin-bottom: 10px;
 }

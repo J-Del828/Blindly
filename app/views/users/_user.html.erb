@@ -1,5 +1,6 @@
+<div class='profile-card'>
 <div class="text-center">
-  <% if user.gender == 'male' %>
+  <% if user.gender == 'Male' %>
     <%= image_tag "Bitmoji.png", class: "avatar_user", alt: "avatar" %>
   <% else %>
     <%= image_tag "Bitmoji2.png", class: "avatar_user", alt: "avatar" %>
@@ -14,7 +15,7 @@
 </div>
 <br>
   <div class='header'>
-    <% if user.gender == 'Male' %>
+    <% if user.preferred_gender == 'Male' %>
       <i class="fas fa-male"></i>
     <% else  %>
       <i class="fas fa-female"></i>
@@ -22,14 +23,18 @@
     <h1><%= user.name %></h1>
     <h3><%= user.age %></h3>
   </div>
-<hr style="height:2px;border-width:0;color:#433D3C;background-color:#433D3C;">
-<h5><strong>Bio</strong></h5>
-<div class='description'>
-  <p><%= user.biography %></p>
+  </div>
+<%# <hr style="height:2px;border-width:0;color:#433D3C;background-color:#433D3C;"> %>
+<h5><strong>Bio</strong> <i class="fas fa-book-reader"></i></h5>
+<div class='Bio'>
+  <p> Hello my name is john and im looking for the love of my life here on this aswesome app, i really hope i find what in looking for </p>
 </div>
-<hr style="height:2px;border-width:0;color:#433D3C;background-color:#433D3C;">
+<%# <div class='description'> %>
+  <%# <p><%= user.biography %>
+<%# </div> %>
+<%# <hr style="height:2px;border-width:0;color:#433D3C;background-color:#433D3C;"> %>
 <div class='mb-3'>
-  <h5><strong>My interests</strong></h5>
+  <h5><strong>My interests</strong><i class="fas fa-star"></i></h5>
   <div class='row p-4'>
     <% user.interests.each do |interest| %>
       <div class="col-6">

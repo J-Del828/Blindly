@@ -1,19 +1,24 @@
-<div id="container">
-  <% @relationship.messages.each do |message| %>
-    <% if message.user == current_user %>
-      <div class="right-chat mb-0">
-        <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
-        <p><%= message.content %></p>
-      </div>
-    <% else %>
-      <div class="left-chat mb-0">
-        <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
-        <p><%= message.content %></p>
-      </div>
+<div class="content-container">
+  <div class="chat-messages-box">
+    <div>
+    <% @relationship.messages.each do | message | %>
+      <% if message.user == current_user %>
+        <div class="right-chat mb-0">
+          <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
+          <p><%= message.content %></p>
+        </div>
+      <% else %>
+        <div class="left-chat mb-0">
+          <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
+          <p><%= message.content %></p>
+        </div>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
+  <div class="chat-form" id="msg-container">
+    <%= simple_form_for [@relationship, @message], remote: true do |f| %>
+      <%= f.input :content, label: false, placeholder: "Say something!" %>
+      <%= f.submit %>
+    <% end %>
+  </div>
 </div>
-<%= simple_form_for [@relationship, @message], remote: true do |f| %>
-  <%= f.input :content, label: false, placeholder: "Say something!" %>
-  <%= f.submit %>
-<% end %>

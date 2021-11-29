@@ -24,11 +24,19 @@ require("channels")
 
 // External imports
 import "bootstrap";
+import Swal from 'sweetalert2'
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
 document.addEventListener('turbolinks:load', () => {
+
   // Call your functions here, e.g:
   // initSelect2();
 });
+// Swal.fire({
+//   title: "It's a match!",
+//   text: 'Do you want to visit the profile?',
+//   icon: 'success',
+//   confirmButtonText: 'Go to profile'
+// })

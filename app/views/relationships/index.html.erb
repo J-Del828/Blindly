@@ -1,15 +1,17 @@
 <div class="convos-container">
   <div>
     <% @relationships.each do |relationship| %>
-      <div class="card-product">
-        <div class="chat-pic-div">
-          <%= image_tag "pp.png", class: "chat-pic" %>
+      <%= link_to relationship_path(relationship) do%>
+        <div class="card-product">
+          <div class="chat-pic-div">
+            <%= image_tag "pp.png", class: "chat-pic" %>
+          </div>
+          <div class="card-product-infos">
+            <h2><%= relationship.partner_1.name %></h2>
+            <p>Hi! How are you?</p>
+          </div>
         </div>
-        <div class="card-product-infos">
-          <h2><%= relationship.partner_1.name %></h2>
-          <p>Hi! How are you?</p>
-        </div>
-      </div>
-    <% end %>
-  </div>
+      <% end %>
+    </div>
+  <% end %>
 </div>

@@ -9,8 +9,7 @@
     </div>
   <% end %>
 </div>
-<%= simple_form_for @message, url: messages_path, remote: true do |f| %>
-  <%= f.input :content, label: false, placeholder: "Say something!" %>
+<%= simple_form_for @message, url: relationship_messages_path(@relationship), remote: true do |f| %>
   <%= f.input :content, label: false, placeholder: "Say something!" %>
   <%= f.submit %>
 <% end %>

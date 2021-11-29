@@ -1,12 +1,16 @@
-<div id="messages" data-chatroom-id="<%= @relationship.id %>">
+<div id="container">
   <% @relationship.messages.each do |message| %>
-    <div class="message-container" id="message-<%= message.id %>">
-      <i class="author">
-        <span><%= message.user.name %></span>
+    <% if message.user == current_user %>
+      <div class="right-chat">
         <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
-      </i>
-      <p><%= message.content %></p>
-    </div>
+        <p><%= message.content %></p>
+      </div>
+    <% else %>
+      <div class="left-chat text-left">
+        <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
+        <p><%= message.content %></p>
+      </div>
+    <% end %>
   <% end %>
 </div>
 <%= simple_form_for [@relationship, @message], remote: true do |f| %>

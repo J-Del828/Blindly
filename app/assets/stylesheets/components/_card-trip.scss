@@ -14,6 +14,7 @@
   width: 250px;
   border-radius: 50%;
   object-fit: cover;
+  pointer-events: none;
 }
 
 .card-trip h2 {
@@ -37,6 +38,7 @@
   align-items: flex-end;
   text-align: center;
   position: relative;
+  pointer-events: none;
 }
 
 .shared-interests {
@@ -45,6 +47,7 @@
   height: 90px;
   justify-content: center;
   padding: 0 1rem;
+  pointer-events: none;
 }
 
 .choice-card {
@@ -52,4 +55,5 @@
   width: 100%;
   display: flex;
   justify-content: space-evenly;
+  pointer-events: none;
 }

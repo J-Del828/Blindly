@@ -26,13 +26,17 @@ require("channels")
 import "bootstrap";
 import Swal from 'sweetalert2'
 
+
+
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
+import { initSwipe } from '../components/swipe';
 
 document.addEventListener('turbolinks:load', () => {
 
   // Call your functions here, e.g:
   // initSelect2();
+  initSwipe();
 });
 // Swal.fire({
 //   title: "It's a match!",

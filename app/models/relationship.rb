@@ -11,4 +11,5 @@ class Relationship < ApplicationRecord
   def affinity_color(saturation: "50%", luminosity: "50%")
     "hsl(#{285 + (affinity * 5)}, #{saturation}, #{luminosity})"
   end
+  has_many :messages
 end

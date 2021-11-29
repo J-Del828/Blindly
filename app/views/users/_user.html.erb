@@ -1,9 +1,9 @@
 <div class="text-center">
-  <% if user.gender == 'male' %>
+  <%# if user.gender == 'male' %>
     <%= image_tag "Bitmoji.png", class: "avatar_user", alt: "avatar" %>
-  <% else %>
-    <%= image_tag "Bitmoji2.png", class: "avatar_user", alt: "avatar" %>
-  <% end %>
+  <%# else %>
+    <%#= image_tag "Bitmoji2.png", class: "avatar_user", alt: "avatar" %>
+  <%# end %>
   <div>
     <% if user.id == current_user.id %>
       <%= link_to edit_profile_path do %>

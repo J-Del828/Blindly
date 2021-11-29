@@ -1,10 +1,13 @@
 .convos-container {
     min-height: calc(100vh - 86px - 90px);
-    background-color: whitesmoke;
+    background-color: white;
 }
 
 div.card-product {
-    background: #9c59e4;
+    //background: #9c59e4;
+    margin-bottom: 4px;
+    background-color: white;
+    padding: 4px;
 }
 
 .card-product {
@@ -24,13 +27,13 @@ img.chat-pic {
 }
 
 .card-product h2 {
-    font-size: 16px;
+    font-size: 24px;
     font-weight: bold;
     margin: 0;
 }
 
 .card-product p {
-    font-size: 12px;
+    font-size: 18px;
     line-height: 1.4;
     opacity: .7;
     margin-bottom: 0;

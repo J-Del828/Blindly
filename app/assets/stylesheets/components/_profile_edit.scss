@@ -1,18 +1,23 @@
 .card-interests {
 display: flex;
 width: 80%;
+
 }
 
 .wrapper {
-  background-color: #6D8299;
+  background-color: #f9f8fa;
   border-radius: 5px;
   padding: 10px;
+
 }
 
 .btn-success {
   display: flex;
 margin-left: auto;
 margin-right: auto;
+background-color: #bbaeeb;
+border: 1px solid rgb(148, 143, 143);
+margin-bottom: 5px;
 }
 
 h5 {
@@ -23,7 +28,7 @@ h5 {
 ul {
   display:inline-block;
   column-count: 2;
-
+  margin-bottom: 0%;
 }
 
 .col-form-label{
@@ -32,4 +37,9 @@ ul {
 
 .form-control {
 border-radius: 5px;
+}
+
+.input_field {
+background-color:#f1edf18f;
+
 }

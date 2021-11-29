@@ -1,12 +1,12 @@
 <div id="container">
   <% @relationship.messages.each do |message| %>
     <% if message.user == current_user %>
-      <div class="right-chat">
+      <div class="right-chat mb-0">
         <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
         <p><%= message.content %></p>
       </div>
     <% else %>
-      <div class="left-chat text-left">
+      <div class="left-chat mb-0">
         <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
         <p><%= message.content %></p>
       </div>

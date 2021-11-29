@@ -1,12 +1,12 @@
 body{
-  background-color: #852ebe;
+  background-color: white;
 
 }
 .avatar_user{
   margin-top: 40px;
   width: 250px;
   height: 250px;
-  background-color: #D5D5D5;
+  background-color: #852ebe;
   border-radius: 100%;
   margin-left: auto;
   margin-right: auto;
@@ -15,28 +15,30 @@ body{
 
 .fa-user-edit::before{
 font-size: 40px;
-color: #a19da7;
+color: #560764;
 }
 
 .fa-user-edit:after{
   color: #193498;
 }
 
-.header {
-  display: flex;
+.container-header {
+display: flex;
 align-items: center;
 justify-content: space-around;
-margin-right: 40px;
+
 }
 
 .fa-male{
   font-size: 40px;
   margin: 15px;
+  color: #560764;
 }
 
 .fa-female{
-  font-size: 40px;
-  margin: 15px;
+  font-size: 35px;
+  color: #560764;
+
 }
 
 .description {
@@ -49,8 +51,6 @@ margin-right: 40px;
 
 h5 {
   margin-left: 5%;
-  margin-top: 0%;
-
 }
 
 .Bio {
@@ -63,9 +63,29 @@ margin-left: 15px;
   margin-left: auto;
   margin-right: auto;
 padding: 0.2rem !important;
+ border-bottom: 2px dotted rgb(49, 22, 22);
+ padding-bottom: 20px;
 }
 
 .profile-card {
   border-bottom: 2px dotted rgb(49, 22, 22);
   margin-bottom: 10px;
+}
+
+.fa-star {
+  color: #560764;
+}
+
+.fa-book-reader {
+  color: #560764;
+}
+
+p {
+margin-bottom: 0px;
+margin-left: 2%;
+}
+
+.fa-eye{
+font-size: 25px;
+color: #560764;
 }

@@ -9,6 +9,11 @@ class RelationshipsController < ApplicationController
     @message = Message.new
   end
 
+  def destroy
+    @relationship = Relationship.find(params[:id])
+    @relationship.destroy
+  end
+
   def decrease_affinity
     @relationship = Relationship.find(params[:id])
     @relationship.affinity -= 2

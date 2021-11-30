@@ -8,13 +8,14 @@
           </div>
         <div class="card-product-infos">
           <% if current_user.id == relationship.partner_1.id  %>
-          <h2><%= relationship.partner_2.name %></h2>
-          <%# <p> Hello there! </p> %>
-          <p> <%= relationship.messages.last %> </p>
+            <h2><%= relationship.partner_2.name %></h2>
           <% else %>
-          <h2><%= relationship.partner_1.name %></h2>
-          <%# <p> Hello there stranger! </p> %>
-          <p> <%= relationship.messages.last %> </p>
+            <h2><%= relationship.partner_1.name %></h2>
+          <% end %>
+          <% if relationship.messages.last %>
+            <p> <%= relationship.messages.last.content %> </p>
+          <% else %>
+            <p><i> You have not started your conversation </i></p>
           <% end %>
         </div>
       </div>

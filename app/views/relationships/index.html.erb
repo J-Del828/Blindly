@@ -6,18 +6,18 @@
           <div class="chat-pic-div">
             <%= image_tag "pp.png", class: "chat-pic" %>
           </div>
-          <div class="card-product-infos">
-            <% if current_user.id == relationship.partner_1.id  %>
-              <h2><%= relationship.partner_2.name %></h2>
-              <p> Hello there! </p>
-              <p> <%#= relationship.messages.last %> </p>
-            <% else %>
-              <h2><%= relationship.partner_1.name %></h2>
-              <p> Hello there stranger! </p>
-              <p> <%#= relationship.messages.last %> </p>
-            <% end %>
-          </div>
+        <div class="card-product-infos">
+          <% if current_user.id == relationship.partner_1.id  %>
+          <h2><%= relationship.partner_2.name %></h2>
+          <%# <p> Hello there! </p> %>
+          <p> <%= relationship.messages.last %> </p>
+          <% else %>
+          <h2><%= relationship.partner_1.name %></h2>
+          <%# <p> Hello there stranger! </p> %>
+          <p> <%= relationship.messages.last %> </p>
+          <% end %>
         </div>
+      </div>
       <% end %>
     <% end %>
   </div>

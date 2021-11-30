@@ -1,5 +1,5 @@
 <div class="content-container">
-  <div class="affinity-layout">
+  <div class="affinity-layout mb-2">
     <%# raise %>
     <div><%= link_to "-", decrease_affinity_relationship_path(@relationship), method: :patch, class: "affinity-button" %></div>
     <div class="affinity-bar" style="background-image: linear-gradient(to right, <%= @relationship.affinity_color %>, <%= @relationship.affinity_color(saturation: "90%", luminosity: "80%") %>);"><p class="text-center affinity-label">Compatibility</p></div>
@@ -22,10 +22,10 @@
       <% end %>
     <% end %>
   </div>
-  <div class="chat-form" id="msg-container">
+  <div class="chat-form text-center" id="msg-container">
     <%= simple_form_for [@relationship, @message], html: {class:"msg-form"}, remote: true do |f| %>
-      <%= f.input :content, label: false, placeholder: "Say something!" %>
-      <%= f.submit %>
+      <%= f.input :content, class: "chat-form-field text-center", label: false, placeholder: "Say something!" %>
+      <%= f.submit class: "msg-submit mt-0" %>
     <% end %>
   </div>
 </div>

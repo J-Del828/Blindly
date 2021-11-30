@@ -1,6 +1,9 @@
 .msg-form {
     margin-top: 2px;
-    background-color: #A244C2;
+    background-color: #ffffff;
+    position: fixed;
+    width: 100vw;
+    bottom: 90px;
 }
 
 .chat-message-box {
@@ -8,6 +11,15 @@
     background-color: white;
     position: relative;
     margin-bottom: 0px;
+}
+
+.msg-submit {
+    background-color: #A244C2;
+    color: white;
+    padding: 8px;
+    border-radius: 4px;
+    border: none;
+    align-content: right;
 }
 
 .left-chat {

@@ -1,28 +1,45 @@
-.container {
+.msg-form {
+    margin-top: 2px;
+    background-color: #A244C2;
 }
+
+.chat-message-box {
+    margin-bottom: 90px;
+    background-color: white;
+    position: relative;
+    margin-bottom: 0px;
+}
+
 .left-chat {
-  background-color: white;
-  border-bottom: black;
-  color: #685d5dd2;
-  padding: 2px 8px;
-  text-decoration: none;
-  margin: 4px 2px;
-  cursor: pointer;
-  border-radius: 16px;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
-  border: 1px solid #685d5dd2;
-  max-width: 80%;
+    width: fit-content;
+    margin-bottom: 4px;
+    margin-left: 4px;
+    background-color: #A244C2;
+    border-bottom: black;
+    color: #000000;
+    padding: 2px 8px;
+    text-decoration: none;
+    margin: 4px 0px;
+    cursor: pointer;
+    border-radius: 16px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    border: 1px solid #685d5dd2;
+    max-width: 80%;
 }
+
 .right-chat {
-  background-color: white;
-  border-bottom: black;
-  color: #685d5dd2;
-  padding: 2px 8px;
-  text-decoration: none;
-  cursor: pointer;
-  border-radius: 16px;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
-  border: 1px solid #685d5dd2;
-  margin-left: auto;
-  max-width: 80%;
+    width: fit-content;
+    margin-bottom: 4px;
+    margin-right: 4px;
+    background-color: #ffffff;
+    border-bottom: black;
+    color: #000000;
+    padding: 2px 8px;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 16px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    border: 1px solid #685d5dd2;
+    margin-left: auto;
+    max-width: 80%;
 }

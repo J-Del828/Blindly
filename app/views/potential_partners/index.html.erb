@@ -1,35 +1,37 @@
-<div class="cards">
-  <%  @potential_partners.each do |partner| %>
-    <div class="swipable-element">
-      <div class="card-trip">
-        <div class="shared-interests">
-          <% partner.common_interests.each do |interest| %>
-            <div class="button mt-2">
-              <%= interest %>
-            </div>
-          <% end %>
-        </div>
-        <div class="matching-percentage">
-          <h4><strong><%= partner.matching_percentage %>%</strong></h4>
-        </div>
-        <img src="https://elbespurling.com/tbm/wp-content/uploads/2019/02/NwUcCmG.png" class="card-trip-user avatar-bordered" />
-        <div class="card-trip-infos">
-          <div>
-            <h2><%= partner.name %>, <%= partner.age %></h2>
-            <p><em><%= partner.biography %></em></p>
+<div class="swiping-container">
+  <div class="cards">
+    <%  @potential_partners.each do |partner| %>
+      <div class="swipable-element">
+        <div class="card-trip">
+          <div class="shared-interests">
+            <% partner.common_interests.each do |interest| %>
+              <div class="button mt-2">
+                <%= interest %>
+              </div>
+            <% end %>
           </div>
-          <div class="choice-card">
-            <div class="choice-buttons">
-              <%= button_to potential_partner_matches_path(partner), params: { want: false }, form: { class: "match-button nope" } do %>
-                <i class="fas fa-times-circle fa-5x cross-icon clickable unswipable"></i>
-              <% end %>
-              <%= button_to potential_partner_matches_path(partner), params: { want: true }, form: { class: "match-button love" } do %>
-                <i class="fab fa-gratipay fa-5x heart-icon clickable unswipable"></i>
-              <% end %>
+          <div class="matching-percentage">
+            <h4><strong><%= partner.matching_percentage %>%</strong></h4>
+          </div>
+          <img src="https://elbespurling.com/tbm/wp-content/uploads/2019/02/NwUcCmG.png" class="card-trip-user avatar-bordered" />
+          <div class="card-trip-infos">
+            <div>
+              <h2><%= partner.name %>, <%= partner.age %></h2>
+              <p><em><%= partner.biography %></em></p>
+            </div>
+            <div class="choice-card unswipable">
+              <div class="choice-buttons unswipable">
+                <%= button_to potential_partner_matches_path(partner), params: { want: false }, form: { class: "match-button nope" } do %>
+                  <i class="fas fa-times-circle fa-4x cross-icon clickable unswipable"></i>
+                <% end %>
+                <%= button_to potential_partner_matches_path(partner), params: { want: true }, form: { class: "match-button love" } do %>
+                  <i class="fab fa-gratipay fa-4x heart-icon clickable unswipable"></i>
+                <% end %>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>

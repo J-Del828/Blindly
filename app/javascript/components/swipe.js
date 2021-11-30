@@ -63,8 +63,8 @@ export const initSwipe = () => {
         //   card.remove()
         // }, 300)
 
-        const love = "";
-        love ? sendLoveMatch() : sendNopeMatch()
+        // const love = ;
+        // love ? sendLoveMatch() : sendNopeMatch()
       }
     });
 
@@ -81,7 +81,7 @@ function initCards(allCards, tinderContainer) {
 
   newCards.forEach(function (card, index) {
     card.style.zIndex = allCards.length - index;
-    card.style.transform = 'scale(' + (20 - index) / 20 + ') translateY(-' + 30 * index + 'px)';
+    card.style.transform = 'scale(' + (20 - index) / 20 + ') translateY(-' + 20 * index + 'px)';
     card.style.opacity = (10 - index) / 10;
   });
 

@@ -5,6 +5,9 @@ class MatchesController < ApplicationController
     if relationship
       flash.notice = "You're matched with #{match.partner.name} "
     end
-    redirect_to potential_partners_path
+    respond_to do |format|
+      format.html { redirect_to potential_partners_path }
+      format.text { head :ok }
+    end
   end
 end

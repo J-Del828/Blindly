@@ -10,9 +10,9 @@
         <div class='card-interests'>
           <%= f.input :interests,:collection => User::INTERESTS,:label => false ,:include_blank => false, as: :check_boxes, input_html: { class: "tag-selector" },
                   item_wrapper_class: 'tag-item' %>
-
+      </ul>
         </div>
-        
+
         <%= f.input :age,
                             label: "Age",
                             autofocus: true,
@@ -34,9 +34,7 @@
                             autofocus: true,
                             input_html: { class: 'input_field' }%>
 
-                  <%= f.button :submit, "save profile", class:'submit-button-btn btn-success' %>  
+                  <%= f.button :submit, "save profile", class:'submit-button-btn btn-success' %>
         <% end %>
-    </ul>
 </div>
 </div>
-

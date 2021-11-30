@@ -1,34 +1,28 @@
 import * as Hammer from "hammerjs";
 
-
 export const initSwipe = () => {
-  var tinderContainer = document.querySelector('.cards');
-  var allCards = document.querySelectorAll('.card-trip');
-  var nope = document.getElementById('nope');
-  var love = document.getElementById('love');
+  const tinderContainer = document.querySelector('.cards');
+  const allCards = document.querySelectorAll('.card-trip');
 
-  function initCards(card, index) {
-    var newCards = document.querySelectorAll('.card-trip:not(.removed)');
+  initCards(allCards, tinderContainer);
 
-    newCards.forEach(function (card, index) {
-      card.style.zIndex = allCards.length - index;
-      card.style.transform = 'scale(' + (20 - index) / 20 + ') translateY(-' + 30 * index + 'px)';
-      card.style.opacity = (10 - index) / 10;
-    });
+  allCards.forEach(function (card) {
+    const nopeBtn = card.querySelector(".match-button.nope")
+    const loveBtn = card.querySelector(".match-button.love")
+    const sendNopeMatch = createMatch(nopeBtn)
+    const sendLoveMatch = createMatch(loveBtn)
 
-    tinderContainer.classList.add('loaded');
-  }
-
-  initCards();
-
-  allCards.forEach(function (el) {
-    var hammertime = new Hammer(el);
+    const hammertime = new Hammer(card);
 
     hammertime.on('pan', function (event) {
-      el.classList.add('moving');
+      if (event.target.classList.contains("unswipable")) { return };
+
+      card.classList.add('moving');
     });
 
     hammertime.on('pan', function (event) {
+      if (event.target.classList.contains("unswipable")) { return };
+
       if (event.deltaX === 0) return;
       if (event.center.x === 0 && event.center.y === 0) return;
 
@@ -43,7 +37,7 @@ export const initSwipe = () => {
     });
 
     hammertime.on('panend', function (event) {
-      el.classList.remove('moving');
+      card.classList.remove('moving');
       tinderContainer.classList.remove('tinder_love');
       tinderContainer.classList.remove('tinder_nope');
 
@@ -64,37 +58,75 @@ export const initSwipe = () => {
         var rotate = xMulti * yMulti;
 
         event.target.style.transform = 'translate(' + toX + 'px, ' + (toY + event.deltaY) + 'px) rotate(' + rotate + 'deg)';
-        initCards();
+        initCards(allCards, tinderContainer);
+        // setTimeout(() => {
+        //   card.remove()
+        // }, 300)
+
+        const love = "";
+        love ? sendLoveMatch() : sendNopeMatch()
       }
     });
+
+    const nopeListener = createButtonListener(false, sendNopeMatch);
+    const loveListener = createButtonListener(true, sendLoveMatch);
+
+    nopeBtn.addEventListener("click", nopeListener)
+    loveBtn.addEventListener("click", loveListener)
+  });
+}
+
+function initCards(allCards, tinderContainer) {
+  const newCards = document.querySelectorAll('.card-trip:not(.removed)');
+
+  newCards.forEach(function (card, index) {
+    card.style.zIndex = allCards.length - index;
+    card.style.transform = 'scale(' + (20 - index) / 20 + ') translateY(-' + 30 * index + 'px)';
+    card.style.opacity = (10 - index) / 10;
   });
 
-  function createButtonListener(love) {
-    return function (event) {
-      var cards = document.querySelectorAll('.card-trip:not(.removed)');
-      var moveOutWidth = document.body.clientWidth * 1.5;
+  tinderContainer.classList.add('loaded');
+}
 
-      if (!cards.length) return false;
+function createButtonListener(love, sendMatch) {
+  return function (event) {
+    event.preventDefault()
 
-      var card = cards[0];
+    var cards = document.querySelectorAll('.card-trip:not(.removed)');
+    var moveOutWidth = document.body.clientWidth * 1.5;
 
-      card.classList.add('removed');
+    if (!cards.length) return false;
 
-      if (love) {
-        card.style.transform = 'translate(' + moveOutWidth + 'px, -100px) rotate(-30deg)';
-      } else {
-        card.style.transform = 'translate(-' + moveOutWidth + 'px, -100px) rotate(30deg)';
-      }
+    var card = cards[0];
 
-      initCards();
+    card.classList.add('removed');
 
-      event.preventDefault();
-    };
+    if (love) {
+      card.style.transform = 'translate(' + moveOutWidth + 'px, -100px) rotate(-30deg)';
+    } else {
+      card.style.transform = 'translate(-' + moveOutWidth + 'px, -100px) rotate(30deg)';
+    }
+    sendMatch()
+
+    const allCards = document.querySelectorAll('.card-trip');
+    const tinderContainer = document.querySelector('.cards');
+    initCards(allCards, tinderContainer);
+
+    event.preventDefault();
+  };
+}
+
+function createMatch(form) {
+  return function () {
+    const url = form.action
+    fetch(url, {
+      method: 'POST',
+      headers: { 'Accept': 'text/plain' },
+      body: new FormData(form)
+    })
+      .then(response => response.text())
+      .then((data) => {
+        console.log(data);
+      })
   }
-
-  var nopeListener = createButtonListener(false);
-  var loveListener = createButtonListener(true);
-
-  nope.addEventListener('click', nopeListener);
-  love.addEventListener('click', loveListener);
 }

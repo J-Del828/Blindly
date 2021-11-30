@@ -1,11 +1,19 @@
 .card-trip {
-  position: relative;
+  position: absolute;
   display: grid;
   grid-gap: 20px;
   overflow: hidden;
   background: #ffffff;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   height: 95vh;
+
+  &:not(.moving) {
+    will-change: transform;
+    transition: all 0.3s ease-in-out;
+  }
+}
+body {
+  overflow: hidden !important;
 }
 
 .card-trip > img {
@@ -56,4 +64,8 @@
   display: flex;
   justify-content: space-evenly;
   pointer-events: none;
+}
+.choice-buttons {
+  pointer-events: auto;
+  cursor: pointer;
 }

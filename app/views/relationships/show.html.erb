@@ -1,19 +1,31 @@
-<div id="container">
-  <% @relationship.messages.each do |message| %>
-    <% if message.user == current_user %>
-      <div class="right-chat mb-0">
-        <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
-        <p><%= message.content %></p>
-      </div>
-    <% else %>
-      <div class="left-chat mb-0">
-        <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
-        <p><%= message.content %></p>
-      </div>
+<div class="content-container">
+  <div class="affinity-layout">
+    <%# raise %>
+    <div><%= link_to "-", decrease_affinity_relationship_path(@relationship), method: :patch, class: "affinity-button" %></div>
+    <div class="affinity-bar" style="background-image: linear-gradient(to right, <%= @relationship.affinity_color %>, <%= @relationship.affinity_color(saturation: "90%", luminosity: "80%") %>);"><p class="text-center affinity-label">Compatibility</p></div>
+    <div><%= link_to "+", increase_affinity_relationship_path(@relationship), method: :patch, class: "affinity-button"  %></div>
+
+  </div>
+
+  <div class="chat-messages-box">
+    <% @relationship.messages.each do | message | %>
+      <% if message.user == current_user %>
+        <div class="right-chat mb-1">
+          <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
+          <p class="mb-0"><%= message.content %></p>
+        </div>
+      <% else %>
+        <div class="left-chat mb-1">
+          <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
+          <p class="mb-0"><%= message.content %></p>
+        </div>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
+  <div class="chat-form" id="msg-container">
+    <%= simple_form_for [@relationship, @message], html: {class:"msg-form"}, remote: true do |f| %>
+      <%= f.input :content, label: false, placeholder: "Say something!" %>
+      <%= f.submit %>
+    <% end %>
+  </div>
 </div>
-<%= simple_form_for [@relationship, @message], remote: true do |f| %>
-  <%= f.input :content, label: false, placeholder: "Say something!" %>
-  <%= f.submit %>
-<% end %>

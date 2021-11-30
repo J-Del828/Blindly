@@ -1,7 +1,7 @@
 <div class="convos-container">
   <div>
     <% @relationships.each do |relationship| %>
-      <%= link_to relationship_path(relationship) do%>
+      <%= link_to relationship_path(relationship) do %>
         <div class="card-product" style="background-image: linear-gradient(to right, <%= relationship.affinity_color %>, <%= relationship.affinity_color(saturation: "90%", luminosity: "80%") %>);">
           <div class="chat-pic-div">
             <%= image_tag "pp.png", class: "chat-pic" %>
@@ -19,5 +19,6 @@
           </div>
         </div>
       <% end %>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
+</div>

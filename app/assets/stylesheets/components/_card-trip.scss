@@ -1,25 +1,28 @@
+.swiping-container {
+  overflow: hidden !important;
+}
 .card-trip {
+  border-radius: 20px;
+  width: calc(100% - 24px);
+  margin-left: 8px;
   position: absolute;
   display: grid;
   grid-gap: 20px;
   overflow: hidden;
   background: #ffffff;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  height: 95vh;
+  height: 78vh;
 
   &:not(.moving) {
     will-change: transform;
     transition: all 0.3s ease-in-out;
   }
 }
-body {
-  overflow: hidden !important;
-}
 
 .card-trip > img {
   margin: auto;
-  height: 250px;
-  width: 250px;
+  height: 175px;
+  width: 175px;
   border-radius: 50%;
   object-fit: cover;
   pointer-events: none;
@@ -59,13 +62,13 @@ body {
 }
 
 .choice-card {
-  margin-top: 20px;
+  margin-top: 24px;
   width: 100%;
-  display: flex;
-  justify-content: space-evenly;
   pointer-events: none;
 }
 .choice-buttons {
   pointer-events: auto;
   cursor: pointer;
+  display: flex;
+  justify-content: space-evenly;
 }

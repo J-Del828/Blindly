@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_24_164048) do
+ActiveRecord::Schema.define(version: 2021_11_29_094431) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,12 +27,12 @@ ActiveRecord::Schema.define(version: 2021_11_24_164048) do
 
   create_table "messages", force: :cascade do |t|
     t.text "content"
-    t.bigint "match_id"
     t.bigint "relationship_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["match_id"], name: "index_messages_on_match_id"
+    t.bigint "user_id"
     t.index ["relationship_id"], name: "index_messages_on_relationship_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "relationships", force: :cascade do |t|
@@ -66,8 +66,8 @@ ActiveRecord::Schema.define(version: 2021_11_24_164048) do
 
   add_foreign_key "matches", "users", column: "partner_id"
   add_foreign_key "matches", "users", column: "requester_id"
-  add_foreign_key "messages", "matches"
   add_foreign_key "messages", "relationships"
+  add_foreign_key "messages", "users"
   add_foreign_key "relationships", "users", column: "partner_1_id"
   add_foreign_key "relationships", "users", column: "partner_2_id"
 end

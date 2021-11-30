@@ -1,4 +1,4 @@
-class PotentialPartnersController < ApplicationController
+  class PotentialPartnersController < ApplicationController
   def index
     @potential_partners = current_user.potential_partners
   end

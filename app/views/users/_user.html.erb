@@ -9,7 +9,7 @@
     <% if user.id == current_user.id %>
       <%= link_to edit_profile_path do %>
         <i class="fas fa-user-edit"></i>
-    <% end %>
+      <% end %>
     <% end %>
   </div>
 </div>
@@ -26,11 +26,11 @@
     <h1><%= user.name %></h1>
     <h3><%= user.age %></h3>
   </div>
-  </div>
+ </div>
 <%# <hr style="height:2px;border-width:0;color:#433D3C;background-color:#433D3C;"> %>
 <h5><strong>Bio</strong> <i class="fas fa-book-reader"></i></h5>
 <div class='Bio'>
-  <p> Hello my name is john and im looking for the love of my life here on this aswesome app, i really hope i find what in looking for </p>
+  <p><%= user.biography %></p>
 </div>
 <%# <div class='description'> %>
   <%# <p><%= user.biography %>
@@ -45,6 +45,6 @@
           <%= interest %>
         </div>
       </div>
-     <% end %>
-    </div>
+    <% end %>
+  </div>
 </div>

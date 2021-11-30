@@ -5,8 +5,9 @@ Rails.application.routes.draw do
   resources :potential_partners, only: [ :index ] do
   resources :matches, only: [ :create ]
   end
-  resources :relationships, only: [ :index, :show, :update, :destroy ]
+  resources :relationships, only: [ :index, :show, :update, :destroy ] do
   resources :messages, only: [ :create ]
+  end
   resources :users, only: [ :show ]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

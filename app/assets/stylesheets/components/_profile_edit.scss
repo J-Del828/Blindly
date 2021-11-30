@@ -1,7 +1,15 @@
 .card-interests {
 display: flex;
-width: 80%;
+width: 90%;
+display: flow-root;
+margin-right: auto;
+margin-left: 60px;
+}
 
+.user_interests {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 0 auto;
 }
 
 .wrapper {

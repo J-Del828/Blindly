@@ -1,18 +1,13 @@
 <div class='container'>
   <div class='wrapper'>
     <h5>Interests</h5>
-    <ul>
-      <%= simple_form_for(current_user, url: edit_profile_path) do |f| %>
-        <%#= f.association User::INTERESTS,
-                  as: :check_boxes,
-                  input_html: { class: "tag-selector" },
-                  item_wrapper_class: 'tag-item' %>
-        <div class='card-interests'>
-          <%= f.input :interests,:collection => User::INTERESTS,:label => false ,:include_blank => false, as: :check_boxes, input_html: { class: "tag-selector" },
-                  item_wrapper_class: 'tag-item' %>
-      </ul>
-        </div>
 
+      <%= simple_form_for(current_user, url: profile_path) do |f| %>
+        <div class='mb-3 card-interests'>
+          <%= f.input :interests,:collection => User::INTERESTS,:label => false ,:include_blank => false, as: :check_boxes, input_html: { class: "tag-selector" },
+                  item_wrapper_class: 'tag-item', include_hidden: false %>
+
+        </div>
         <%= f.input :age,
                             label: "Age",
                             autofocus: true,
@@ -34,7 +29,7 @@
                             autofocus: true,
                             input_html: { class: 'input_field' }%>
 
-                  <%= f.button :submit, "save profile", class:'submit-button-btn btn-success' %>
+                  <%= f.submit "save profile", class:'submit-button-btn btn-success' %>
         <% end %>
-</div>
+  </div>
 </div>

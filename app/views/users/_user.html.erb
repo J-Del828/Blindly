@@ -40,11 +40,13 @@
   <h5><strong>My interests</strong><i class="fas fa-star"></i></h5>
   <div class='row p-4'>
     <% user.interests.each do |interest| %>
-      <div class="col-6">
-        <div class='custom-tag'>
-          <%= interest %>
-        </div>
-      </div>
+        <%# if interest != "" %>
+          <div class="col-6">
+            <div class='custom-tag'>
+              <%= interest %>
+            </div>
+          </div>
+        <%# end %>
     <% end %>
   </div>
 </div>

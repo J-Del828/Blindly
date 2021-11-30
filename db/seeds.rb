@@ -74,14 +74,14 @@ Match.create!(requester_id: user2.id, partner_id: john.id, want_match: true)
 Match.create!(requester_id: john.id, partner_id: user3.id, want_match: true)
 Match.create!(requester_id: user3.id, partner_id: john.id, want_match: true)
 
-Match.create!(requester_id: john.id, partner_id: user4.id, want_match: true)
+# Match.create!(requester_id: john.id, partner_id: user4.id, want_match: true)
 Match.create!(requester_id: user4.id, partner_id: john.id, want_match: true)
 
-Match.create!(requester_id: john.id, partner_id: user5.id, want_match: true)
+# Match.create!(requester_id: john.id, partner_id: user5.id, want_match: true)
 Match.create!(requester_id: user5.id, partner_id: john.id, want_match: true)
 
-Match.create!(requester_id: john.id, partner_id: user6.id, want_match: true)
+# Match.create!(requester_id: john.id, partner_id: user6.id, want_match: true)
 Match.create!(requester_id: user6.id, partner_id: john.id, want_match: true)
 
-Match.create!(requester_id: john.id, partner_id: user7.id, want_match: true)
+# Match.create!(requester_id: john.id, partner_id: user7.id, want_match: true)
 Match.create!(requester_id: user7.id, partner_id: john.id, want_match: true)

@@ -16,11 +16,11 @@
                             label: "preferred age",
                             autofocus: true,
                             input_html: { class: 'input_field' }%>
-        <%= f.input :gender, :collection => ["male", "female"],
+        <%= f.input :gender, :collection => ["Male", "Female"],
                             label: "Your Gender",
                             autofocus: true,
                             input_html: { autocomplete: "Your Gender", class: 'input_field' }%>
-        <%= f.input :preferred_gender, :collection => ["male", "female"],
+        <%= f.input :preferred_gender, :collection => ["Male", "Female"],
                             label: "Preffered Gender",
                             autofocus: true,
                             input_html: { autocomplete: "Preffered Gender", class: 'input_field' }%>
@@ -29,7 +29,7 @@
                             autofocus: true,
                             input_html: { class: 'input_field' }%>
 
-                  <%= f.submit "save profile", class:'submit-button-btn btn-success' %>
+                  <%= f.submit "save profile", class:'btn-save' %>
         <% end %>
   </div>
 </div>

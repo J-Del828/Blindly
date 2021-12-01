@@ -27,7 +27,11 @@ color: #560764;
 display: flex;
 align-items: center;
 justify-content: space-around;
+align-items: baseline;
+}
 
+h1{
+  margin-right: 30px;
 }
 
 .fa-male{

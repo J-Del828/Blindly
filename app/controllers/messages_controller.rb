@@ -7,9 +7,13 @@ class MessagesController < ApplicationController
     if @message.save
       RelationshipChannel.broadcast_to(
         @relationship,
-        render_to_string(partial: "message", locals: { message: @message })
+        {
+          message: render_to_string(partial: "message", locals: { message: @message, user: nil }),
+          sender_id: current_user.id
+        }
       )
-      redirect_to relationship_path(@relationship, anchor: "message-#{@message.id}")
+      head :no_content
+      # redirect_to relationship_path(@relationship, anchor: "message-#{@message.id}")
     else
       render "relationships/show"
     end

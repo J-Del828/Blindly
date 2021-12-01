@@ -4,17 +4,20 @@
     <div><%= link_to "", decrease_affinity_relationship_path(@relationship), method: :patch, class: "fas fa-caret-right affinity-button-minus affinity-button" %></div>
     <div class="affinity-bar" style="background-image: linear-gradient(to right, <%= @relationship.affinity_color %>, <%= @relationship.affinity_color(saturation: "90%", luminosity: "80%") %>);"><p class="affinity-bar-label text-center affinity-label w-100">Compatibility</p></div>
     <div><%= link_to "", increase_affinity_relationship_path(@relationship), method: :patch, class: "fas fa-caret-left affinity-button-plus affinity-button"  %></div>
-
   </div>
 
-  <div class="chat-messages-box" id="messages" data-relationship-id="<%= @relationship.id %>">
+  <div class="chat-messages-box"
+       id="messages"
+       data-current-user-id="<%= current_user.id %>"
+       data-relationship-id="<%= @relationship.id %>">
     <% @relationship.messages.each do | message | %>
-      <%= render "messages/message", message: message %>
+      <%= render "messages/message", message: message, user: current_user %>
     <% end %>
   </div>
   <div class="chat-form text-center" id="msg-container">
     <%= simple_form_for [@relationship, @message],
-                        html: { class:"msg-form" } do |f| %>
+                        html: { class:"msg-form" },
+                        remote: true do |f| %>
       <%= f.input :content,
                   class: "chat-form-field text-center",
                   label: false, placeholder: "Say something!" %>

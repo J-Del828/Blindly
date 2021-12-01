@@ -37,12 +37,6 @@ biography =   ["Subtly charming music aficionado. Lifelong alcohol fan. Avid ent
                "I live alone with 2 dogs, do you wanna be their dad?",
                "I've traveled to over 120 countries, guess one that I didn't visit!"]
 
- 200.times do |n|
-  u = User.create(email: "#{n + 100}test@test.se", password: "test123", name: female_names.sample, interests: User::INTERESTS.sample(rand(5..10)), age: (20..30).to_a.sample, gender: "Female",
-  biography: biography.sample, preferred_age: (20..30).to_a.sample, preferred_gender: "Male")
-  #Match.create!(requester: u, partner: john, want_match: false)
- end
-
 
 user2 = User.create!(email: "#{1}test@test.se", password: "test123", name: "Jane", interests: ["Drawing", "Working Out", "Movies", "Meditation", "Yoga"], age: 25, gender: "Female",
 biography: biography.sample, preferred_age: 25, preferred_gender: "Male")

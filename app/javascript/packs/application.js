@@ -43,9 +43,3 @@ document.addEventListener('turbolinks:load', () => {
     initRelationshipCable();
 
 });
-// Swal.fire({
-//   title: "It's a match!",
-//   text: 'Do you want to visit the profile?',
-//   icon: 'success',
-//   confirmButtonText: 'Go to profile'
-// })

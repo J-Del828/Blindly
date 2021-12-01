@@ -32,9 +32,13 @@ import Swal from 'sweetalert2'
 // import { initSelect2 } from '../components/init_select2';
 import { initSwipe } from '../components/swipe';
 
+import { initRelationshipCable } from '../channels/relationship_channel';
+
 document.addEventListener('turbolinks:load', () => {
 
   // Call your functions here, e.g:
   // initSelect2();
   initSwipe();
+  initRelationshipCable();
+
 });

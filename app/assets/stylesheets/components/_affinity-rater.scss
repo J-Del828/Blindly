@@ -12,22 +12,31 @@ div.affinity-bar {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     display: flex;
     align-items: center;
-    margin: 8px 0px;
+    position: relative;
 }
 
-div.affinity-button {
+
+/* div.affinity-button {
     background-color: white;
     align-items: center;
     width: 16px;
     border: 2px solid #A244C2;
-}
+} */
 
 a.affinity-button {
-    color: black;
-    margin-top: 24px;
-    padding: 4px;
-    background-color: white;
-    justify-content: center;
-    width: 16px;
-    border: 2px solid #A244C2;
+    text-decoration: none;
+}
+
+.affinity-button-plus {
+    font-size: 64px;
+    color: #BF4075;
+}
+
+.affinity-button-minus {
+    font-size: 64px;
+    color: #404ABF;
+}
+
+.affinity-bar-label {
+    opacity: 0.7;
 }

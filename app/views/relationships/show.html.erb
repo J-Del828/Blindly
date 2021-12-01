@@ -1,30 +1,23 @@
 <div class="content-container">
   <div class="affinity-layout mb-2">
     <%# raise %>
-    <div><%= link_to "-", decrease_affinity_relationship_path(@relationship), method: :patch, class: "affinity-button" %></div>
-    <div class="affinity-bar" style="background-image: linear-gradient(to right, <%= @relationship.affinity_color %>, <%= @relationship.affinity_color(saturation: "90%", luminosity: "80%") %>);"><p class="text-center affinity-label">Compatibility</p></div>
-    <div><%= link_to "+", increase_affinity_relationship_path(@relationship), method: :patch, class: "affinity-button"  %></div>
+    <div><%= link_to "", decrease_affinity_relationship_path(@relationship), method: :patch, class: "fas fa-caret-right affinity-button-minus affinity-button" %></div>
+    <div class="affinity-bar" style="background-image: linear-gradient(to right, <%= @relationship.affinity_color %>, <%= @relationship.affinity_color(saturation: "90%", luminosity: "80%") %>);"><p class="affinity-bar-label text-center affinity-label w-100">Compatibility</p></div>
+    <div><%= link_to "", increase_affinity_relationship_path(@relationship), method: :patch, class: "fas fa-caret-left affinity-button-plus affinity-button"  %></div>
 
   </div>
 
-  <div class="chat-messages-box">
+  <div class="chat-messages-box" id="messages" data-relationship-id="<%= @relationship.id %>">
     <% @relationship.messages.each do | message | %>
-      <% if message.user == current_user %>
-        <div class="right-chat mb-1">
-          <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
-          <p class="mb-0"><%= message.content %></p>
-        </div>
-      <% else %>
-        <div class="left-chat mb-1">
-          <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
-          <p class="mb-0"><%= message.content %></p>
-        </div>
-      <% end %>
+      <%= render "messages/message", message: message %>
     <% end %>
   </div>
   <div class="chat-form text-center" id="msg-container">
-    <%= simple_form_for [@relationship, @message], html: {class:"msg-form"}, remote: true do |f| %>
-      <%= f.input :content, class: "chat-form-field text-center", label: false, placeholder: "Say something!" %>
+    <%= simple_form_for [@relationship, @message],
+                        html: { class:"msg-form" } do |f| %>
+      <%= f.input :content,
+                  class: "chat-form-field text-center",
+                  label: false, placeholder: "Say something!" %>
       <%= f.submit class: "msg-submit mt-0" %>
     <% end %>
   </div>

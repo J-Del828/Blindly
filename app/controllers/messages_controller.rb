@@ -5,6 +5,10 @@ class MessagesController < ApplicationController
     @message.user = current_user
     @message.relationship = @relationship
     if @message.save
+      RelationshipChannel.broadcast_to(
+        @relationship,
+        render_to_string(partial: "message", locals: { message: @message })
+      )
       redirect_to relationship_path(@relationship, anchor: "message-#{@message.id}")
     else
       render "relationships/show"

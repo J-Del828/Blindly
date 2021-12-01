@@ -1,7 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Blindly</title>
+    <title>Blindly | Insired Web Dating App.</title>
+    <%= favicon_link_tag asset_path('favicon.ico') %>
+    <meta name="title" content="Blidnly">
+    <meta name="description" content="Blindly is a web dating app where the focus is on building genuine connections based on shared interests. True bonds are established through conversation, not solely on appearance.">
+    <meta name="keywords" content="dating, blind dating, love, relationships, genuine connections.">
+    <meta name="robots" content="index, follow">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="language" content="English">
+
+    <meta property="og:title" content="Blindly | Insired Web Dating App" />
+    <meta property="og:type" content="dating web app" />
+    <meta property="og:url" content="https://www.blindly.one" />
+    <meta property="og:image" content="blindly-og-img.png" />
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -9,6 +22,8 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
+
+
   </head>
 
   <body>

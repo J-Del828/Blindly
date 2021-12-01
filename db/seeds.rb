@@ -80,3 +80,10 @@ Match.create!(requester_id: user6.id, partner_id: john.id, want_match: true)
 
 # Match.create!(requester_id: john.id, partner_id: user7.id, want_match: true)
 Match.create!(requester_id: user7.id, partner_id: john.id, want_match: true)
+
+
+200.times do |n|
+  u = User.create(email: "#{n + 100}test@test.se", password: "test123", name: female_names.sample, interests: User::INTERESTS.sample(rand(5..10)), age: (20..30).to_a.sample, gender: "Female",
+  biography: biography.sample, preferred_age: (20..30).to_a.sample, preferred_gender: "Male")
+  #Match.create!(requester: u, partner: john, want_match: false)
+ end

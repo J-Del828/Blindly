@@ -36,15 +36,9 @@ import { initRelationshipCable } from '../channels/relationship_channel';
 
 document.addEventListener('turbolinks:load', () => {
 
-    // Call your functions here, e.g:
-    // initSelect2();
-    initSwipe();
-    initRelationshipCable();
+  // Call your functions here, e.g:
+  // initSelect2();
+  initSwipe();
+  initRelationshipCable();
 
 });
-// Swal.fire({
-//   title: "It's a match!",
-//   text: 'Do you want to visit the profile?',
-//   icon: 'success',
-//   confirmButtonText: 'Go to profile'
-// })

@@ -12,7 +12,6 @@
   background: #ffffff;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   height: 78vh;
-
   &:not(.moving) {
     will-change: transform;
     transition: all 0.3s ease-in-out;

@@ -16,7 +16,7 @@ john.save!
 # lea.save!
 
 female_names = ["Gabriella", "Alva", "Terese", "Gudrun", "Anna", "Monika", "Susanna", "Lea", "Siri", "Laila", "Tilda",
-                  "Judith"]
+                  "Judith", "Sara", "Elin", "Moa", "Emma", "Matilda", "Anna", "Isabelle", "Sofia", "Felicia", "Jessica", "Nina", "Elvira"]
 biography =   ["Subtly charming music aficionado. Lifelong alcohol fan. Avid entrepreneur. Devoted LotR nerd.
                Foodaholic.",
                "Twitter trailblazer. Maple syrup & bacon practitioner. Troublemaker. Coffee guru. Extreme zombie fanatic.",

@@ -5,8 +5,8 @@ class MatchesController < ApplicationController
 
     respond_to do |format|
       format.json do
-        @go_to_chat_url = relationship_path(relationship) if relationship
-        render json: { new_relationship: relationship.present?, relationship_url: @go_to_chat_url }, status: :ok
+        @go_to_partner_profile = user_path(relationship.partner_1) if relationship
+        render json: { new_relationship: relationship.present?, user_url: @go_to_partner_profile }, status: :ok
       end
 
       format.html do

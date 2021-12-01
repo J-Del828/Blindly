@@ -128,16 +128,17 @@ function createMatch(form, card) {
         setTimeout(() => card.remove(), 300)
 
         const isNewRelationship = data.new_relationship
-        const relationshipURL = data.relationship_url
+        const userURL = data.user_url
+
 
         if (isNewRelationship) {
           Swal.fire({
             title: "It's a match!",
-            text: 'Do you want to visit the profile?',
+            text: `Do you want to visit their profile?`,
             icon: 'success',
-            confirmButtonText: `<a href='${relationshipURL}' class="text-light" <strong>Chat</strong></a>`,
+            confirmButtonText: `<a href='${userURL}' class="text-light" <strong>View profile</strong></a>`,
             showCancelButton: true,
-            cancelButtonText: 'Keep browsing'
+            cancelButtonText: `<strong>Keep browsing</strong>`,
           })
         }
       })

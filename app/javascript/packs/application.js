@@ -38,9 +38,3 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   initSwipe();
 });
-// Swal.fire({
-//   title: "It's a match!",
-//   text: 'Do you want to visit the profile?',
-//   icon: 'success',
-//   confirmButtonText: 'Go to profile'
-// })

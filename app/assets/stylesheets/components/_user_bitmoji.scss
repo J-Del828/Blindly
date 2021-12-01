@@ -4,8 +4,8 @@ body{
 }
 .avatar_user{
   margin-top: 40px;
-  width: 250px;
-  height: 250px;
+  width: 200px;
+  height: 200px;
   background-color: #852ebe;
   border-radius: 100%;
   margin-left: auto;
@@ -63,13 +63,12 @@ margin-left: 15px;
   display: flex;
   margin-left: auto;
   margin-right: auto;
-padding: 0.2rem !important;
- border-bottom: 2px dotted rgb(49, 22, 22);
+  padding: 0.2rem !important;
  padding-bottom: 20px;
 }
 
 .profile-card {
-  border-bottom: 2px dotted rgb(49, 22, 22);
+  border-bottom: 1px solid rgb(49, 22, 22);
   margin-bottom: 10px;
 }
 

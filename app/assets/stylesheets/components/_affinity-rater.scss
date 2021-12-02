@@ -13,15 +13,27 @@ div.affinity-bar {
     display: flex;
     align-items: center;
     position: relative;
+    border-radius: 30px;
 }
 
+.chat-buttons-top {
+    width: 95vw;
+    justify-content: space-between;
+    display: flex;
+    margin-bottom: 8px;
+    padding: 0 2.5rem;
+    align-items: center
+}
 
-/* div.affinity-button {
-    background-color: white;
-    align-items: center;
-    width: 16px;
-    border: 2px solid #A244C2;
-} */
+.delete-match-link {
+    color: red;
+}
+
+.view-profile-link {
+    font-size: 24px;
+    color: rgba(40, 40, 40, 0.9);
+    font-weight: 900;
+}
 
 a.affinity-button {
     text-decoration: none;

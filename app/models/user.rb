@@ -13,12 +13,12 @@ class User < ApplicationRecord
                "Cycling", "Volunteering", "Hiking", "Working Out", "Traveling", "Finance", "Investing", "Meditation", "Yoga", "Sports",
                "Clubbing", "Partying", "Technology", "Movies", "Series"]
 
-  def potential_partners(minimum: 50, age_range: 5)
+  def potential_partners(minimum: 60, age_range: 5)
     joins = <<-SQL.squish
     CROSS JOIN array_intersect(ARRAY['#{interests.join("','")}'], interests::text[]) AS common_interests
     CROSS JOIN array_length(common_interests, 1) AS number_of_common_interests
     CROSS JOIN GREATEST(array_length(interests, 1), #{interests.length}) AS max_interests
-    CROSS JOIN CAST((number_of_common_interests / max_interests::decimal) * 100 AS integer) AS matching_percentage
+    CROSS JOIN CAST((number_of_common_interests / #{interests.length}::decimal) * 100 AS integer) AS matching_percentage
     LEFT OUTER JOIN matches ON matches.requester_id = #{id} AND matches.partner_id = users.id
     SQL
     User.select("users.*, common_interests, number_of_common_interests, max_interests, matching_percentage").

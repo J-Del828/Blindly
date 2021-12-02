@@ -2,7 +2,7 @@
   <div>
     <div class="logo-image" style="background-image: url(<%= image_path('blindly-logo-white.png') %>);"></div>
     <%# <h1><strong>Blindly</strong></h1> %>
-    <p class="mb-3">Do you dare to step out of your comfort zone? </p>
+    <h5 class="mb-3 tag-line">Be your own matchmaker! </h5>
     <%= if !user_signed_in?
       link_to new_user_registration_path do %>
       <button type='button' class='btn btn-outline-light btn-lg mb-4'>Sign Up</button>
@@ -14,11 +14,10 @@
   </div>
   <div class="path">
     <i class="fas fa-search"></i>
-    <h6>Find a potential partner based on common interests.</h6>
+    <h4>Find a partner</h4>
     <i class="fas fa-link"></i>
-    <h6>Get to know one another and stengthen your connection.</h6>
+    <h4>Chat & connect</h4>
     <i class="fas fa-heart"></i>
-    <h6>Decide to meet up in the real world.</h6>
+    <h4>Arrange a date</h4>
   </div>
 </div>
-

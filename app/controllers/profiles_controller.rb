@@ -1,7 +1,6 @@
 class ProfilesController < ApplicationController
 
   def show
-
   end
 
   def edit
@@ -11,7 +10,7 @@ class ProfilesController < ApplicationController
   def update
 
     if current_user.update(user_params)
-      redirect_to profile_path
+      redirect_to profile_path(user_id: current_user.id)
     else
       render :edit
     end

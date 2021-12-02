@@ -5,6 +5,8 @@ export const initSwipe = () => {
   const tinderContainer = document.querySelector('.cards');
   const allCards = document.querySelectorAll('.card-trip');
 
+  if (!tinderContainer) return;
+
   initCards(allCards, tinderContainer);
 
   allCards.forEach(function (card) {

@@ -3,6 +3,7 @@
   <head>
     <title>Blindly | Insired Web Dating App.</title>
     <%= favicon_link_tag asset_path('favicon.ico') %>
+    
     <meta name="title" content="Blidnly">
     <meta name="description" content="Blindly is a web dating app where the focus is on building genuine connections based on shared interests. True bonds are established through conversation, not solely on appearance.">
     <meta name="keywords" content="dating, blind dating, love, relationships, genuine connections.">
@@ -13,10 +14,13 @@
     <meta property="og:title" content="Blindly | Insired Web Dating App" />
     <meta property="og:type" content="dating web app" />
     <meta property="og:url" content="https://www.blindly.one" />
+    <meta property="og:description" content="Blindly is a web dating app where the focus is on building genuine connections based on shared interests. True bonds are established through conversation, not solely on appearance.">
     <meta property="og:image" content="blindly-og-img.png" />
+    <meta property="og:site_name" content="Blindly | Insired Web Dating App" />
 
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>

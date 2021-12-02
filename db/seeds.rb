@@ -37,34 +37,23 @@ biography =   ["Subtly charming music aficionado. Lifelong alcohol fan. Avid ent
                "I live alone with 2 dogs, do you wanna be their dad?",
                "I've traveled to over 120 countries, guess one that I didn't visit!"]
 
- 100.times do
-  u = User.create(email: "#{rand(252...4350)}test@test.se", password: "test123", name: female_names.sample, interests: User::INTERESTS.sample(rand(5..12)), age: 25, gender: "Female",
-  biography: biography.sample, preferred_age: 25, preferred_gender: "Male")
-  #Match.create!(requester: u, partner: john, want_match: false)
- end
 
- 100.times do
-  a = User.create(email: "#{rand(252...4350)}test@gmail.se", password: "test123", name: female_names.sample, interests: User::INTERESTS.sample(rand(5..12)), age: 25, gender: "Female",
-  biography: biography.sample, preferred_age: 25, preferred_gender: "Male")
-  #Match.create!(requester: a, partner: john, want_match: false)
- end
-
-user2 = User.create(email: "#{rand(252...4350)}test@test.se", password: "test123", name: "Jane", interests: ["Drawing", "Working Out", "Movies", "Meditation", "Yoga"], age: 25, gender: "Female",
+user2 = User.create!(email: "#{1}test@test.se", password: "test123", name: "Jane", interests: ["Drawing", "Working Out", "Movies", "Meditation", "Yoga"], age: 25, gender: "Female",
 biography: biography.sample, preferred_age: 25, preferred_gender: "Male")
 
-user3 = User.create(email: "#{rand(252...4350)}test@test.se", password: "test123", name: "Aurora", interests: ["Gardening", "Working Out", "Movies", "Partying", "Meditation", "Yoga"], age: 25, gender: "Female",
+user3 = User.create!(email: "#{2}test@test.se", password: "test123", name: "Aurora", interests: ["Gardening", "Working Out", "Movies", "Partying", "Meditation", "Yoga"], age: 25, gender: "Female",
 biography: biography.sample, preferred_age: 25, preferred_gender: "Male")
 
-user4 = User.create(email: "#{rand(252...4350)}test@test.se", password: "test123", name: "Jasmine", interests: ["Drawing", "Working Out", "Movies", "Partying", "Meditation", "Yoga"], age: 25, gender: "Female",
+user4 = User.create!(email: "#{3}test@test.se", password: "test123", name: "Jasmine", interests: ["Drawing", "Working Out", "Movies", "Partying", "Meditation", "Yoga"], age: 25, gender: "Female",
 biography: biography.sample, preferred_age: 25, preferred_gender: "Male")
 
-user5 = User.create(email: "#{rand(252...4350)}test@test.se", password: "test123", name: "Angel", interests: ["Drawing", "Working Out", "Movies", "Meditation", "Yoga"], age: 25, gender: "Female",
+user5 = User.create!(email: "#{4}test@test.se", password: "test123", name: "Angel", interests: ["Drawing", "Working Out", "Movies", "Meditation", "Yoga"], age: 25, gender: "Female",
 biography: biography.sample, preferred_age: 25, preferred_gender: "Male")
 
-user6 = User.create(email: "#{rand(252...4350)}test@test.se", password: "test123", name: "Sofia", interests: ["Gardening", "Working Out", "Movies", "Partying", "Meditation", "Yoga"], age: 25, gender: "Female",
+user6 = User.create!(email: "#{5}test@test.se", password: "test123", name: "Sofia", interests: ["Gardening", "Working Out", "Movies", "Partying", "Meditation", "Yoga"], age: 25, gender: "Female",
 biography: biography.sample, preferred_age: 25, preferred_gender: "Male")
 
-user7 = User.create(email: "#{rand(252...4350)}test@test.se", password: "test123", name: "Marie", interests: ["Drawing", "Working Out", "Movies", "Partying", "Meditation", "Yoga"], age: 25, gender: "Female",
+user7 = User.create!(email: "#{6}test@test.se", password: "test123", name: "Marie", interests: ["Drawing", "Working Out", "Movies", "Partying", "Meditation", "Yoga"], age: 25, gender: "Female",
 biography: biography.sample, preferred_age: 25, preferred_gender: "Male")
 
 
@@ -85,3 +74,10 @@ Match.create!(requester_id: user6.id, partner_id: john.id, want_match: true)
 
 # Match.create!(requester_id: john.id, partner_id: user7.id, want_match: true)
 Match.create!(requester_id: user7.id, partner_id: john.id, want_match: true)
+
+
+200.times do |n|
+  u = User.create(email: "#{n + 100}test@test.se", password: "test123", name: female_names.sample, interests: User::INTERESTS.sample(rand(5..10)), age: (20..30).to_a.sample, gender: "Female",
+  biography: biography.sample, preferred_age: (20..30).to_a.sample, preferred_gender: "Male")
+  #Match.create!(requester: u, partner: john, want_match: false)
+ end

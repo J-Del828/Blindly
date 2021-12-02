@@ -14,34 +14,19 @@
                             label: "Preferred age",
                             autofocus: true,
                             input_html: { class: 'input_field' }%>
-<<<<<<< HEAD
-      <%= f.input :gender, :collection => ["male", "female"],
+      <%= f.input :gender, :collection => ["Male", "Female"],
                             label: "Your Gender",
                             autofocus: true,
                             input_html: { autocomplete: "Your Gender", class: 'input_field' }%>
-      <%= f.input :preferred_gender, :collection => ["male", "female"],
+      <%= f.input :preferred_gender, :collection => ["Male", "Female"],
                             label: "Preferred Gender",
-=======
-        <%= f.input :gender, :collection => ["Male", "Female"],
-                            label: "Your Gender",
                             autofocus: true,
-                            input_html: { autocomplete: "Your Gender", class: 'input_field' }%>
-        <%= f.input :preferred_gender, :collection => ["Male", "Female"],
-                            label: "Preffered Gender",
->>>>>>> 551e52870e50457a68cf89c0ca5ec5ff875a7b13
-                            autofocus: true,
-                            input_html: { autocomplete: "Preffered Gender", class: 'input_field' }%>
+                            input_html: { autocomplete: "Preferred Gender", class: 'input_field' }%>
       <%= f.input :biography,
                             label: "Biography",
                             autofocus: true,
                             input_html: { class: 'input_field' }%>
-<<<<<<< HEAD
-      <%= f.submit "save profile", class:'submit-button-btn btn-success' %>
+      <%= f.submit "save profile", class:'btn-save' %>
     <% end %>
-=======
-
-                  <%= f.submit "save profile", class:'btn-save' %>
-        <% end %>
->>>>>>> 551e52870e50457a68cf89c0ca5ec5ff875a7b13
   </div>
 </div>

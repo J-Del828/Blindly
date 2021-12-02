@@ -31,7 +31,7 @@
       <%= f.input :content,
                   class: "chat-form-field text-center",
                   label: false, placeholder: "Say something!" %>
-      <%= f.submit class: "msg-submit mt-0", value: "Send" %>
+      <%= f.submit class: "msg-submit mt-0", value: "Send", data: { disable_with: false } %>
     <% end %>
   </div>
 </div>

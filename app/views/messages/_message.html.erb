@@ -1,10 +1,10 @@
 <% if message.user == user %>
-  <div class="right-chat mb-1">
+  <div class="right-chat">
     <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
     <p class="mb-0"><%= message.content %></p>
   </div>
 <% elsif user %>
-  <div class="left-chat mb-1">
+  <div class="left-chat">
     <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
     <p class="mb-0"><%= message.content %></p>
   </div>

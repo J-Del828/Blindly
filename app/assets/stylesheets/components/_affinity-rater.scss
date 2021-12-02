@@ -41,12 +41,31 @@ a.affinity-button {
 
 .affinity-button-plus {
     font-size: 64px;
+    color: #BF4075 !important;
+    position: relative;
+    right: 60%;
+    //border: 2px solid white;
+}
+
+.affinity-button-plus:active {
+    transform: scale(1.2);
     color: #BF4075;
+    /* Scaling button to 0.98 to its original size */
+    /* Lowering the shadow */
 }
 
 .affinity-button-minus {
     font-size: 64px;
     color: #404ABF;
+    z-index: +1;
+    position: relative;
+    left: 60%;
+}
+
+.affinity-button-minus:active {
+    transform: scale(1.2);
+    /* Scaling button to 0.98 to its original size */
+    /* Lowering the shadow */
 }
 
 .affinity-bar-label {

@@ -1,95 +1,93 @@
-body{
-  background-color: white;
-
-}
-.avatar_user{
-  margin-top: 40px;
-  width: 200px;
-  height: 200px;
-  background-color: #852ebe;
-  border-radius: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 10px;
-  border: 2px solid #852ebe;
+body {
+    background-color: white;
 }
 
-.fa-user-edit::before{
-font-size: 40px;
-color: #560764;
+.avatar_user {
+    margin-top: 40px;
+    width: 200px;
+    height: 200px;
+    //background-color: #852ebe;
+    border-radius: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
-.fa-user-edit:after{
-  color: #193498;
+.fa-user-edit::before {
+    font-size: 40px;
+    color: #560764;
+}
+
+.fa-user-edit:after {
+    color: #193498;
 }
 
 .container-header {
-display: flex;
-align-items: center;
-justify-content: space-around;
-align-items: baseline;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    align-items: baseline;
 }
 
-h1{
-  margin-right: 30px;
+h1 {
+    margin-right: 30px;
 }
 
-.fa-male{
-  font-size: 40px;
-  margin: 15px;
-  color: #560764;
+.fa-male {
+    font-size: 40px;
+    margin: 15px;
+    color: #560764;
 }
 
-.fa-female{
-  font-size: 35px;
-  color: #560764;
-
+.fa-female {
+    font-size: 35px;
+    color: #560764;
 }
 
 .description {
-  margin: 10px;
+    margin: 10px;
 }
 
 .column {
-  column-count: 2;
+    column-count: 2;
 }
 
 h5 {
-  margin-left: 5%;
+    margin-left: 5%;
 }
 
 .Bio {
-margin-left: 15px;
-
+    margin-left: 15px;
 }
 
 .p-4 {
-  display: flex;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0.2rem !important;
- padding-bottom: 20px;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0.2rem !important;
+    padding-bottom: 20px;
 }
 
 .profile-card {
-  border-bottom: 1px solid rgb(49, 22, 22);
-  margin-bottom: 10px;
+    border-bottom: 1px solid rgb(49, 22, 22);
+    margin-bottom: 10px;
 }
 
 .fa-star {
-  color: #560764;
+    color: #560764;
 }
 
 .fa-book-reader {
-  color: #560764;
+    color: #560764;
 }
 
 p {
-margin-bottom: 0px;
-margin-left: 2%;
+    margin-bottom: 0px;
+    margin-left: 2%;
 }
 
-.fa-eye{
-font-size: 25px;
-color: #560764;
+.fa-eye {
+    font-size: 25px;
+    color: #560764;
 }

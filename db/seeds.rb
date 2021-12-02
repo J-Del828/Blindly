@@ -50,6 +50,12 @@ biography: biography.sample, preferred_age: 25, preferred_gender: "Male")
 user5 = User.create!(email: "#{4}test@test.se", password: "test123", name: "Angel", interests: ["Drawing", "Working Out", "Movies", "Meditation", "Yoga"], age: 25, gender: "Female",
 biography: biography.sample, preferred_age: 25, preferred_gender: "Male")
 
+4.times do |n|
+  u = User.create(email: "#{n + 200}test@test.se", password: "test123", name: female_names.sample, interests: User::INTERESTS.sample(rand(5..10)), age: (20..30).to_a.sample, gender: "Female",
+  biography: biography.sample, preferred_age: (20..30).to_a.sample, preferred_gender: "Male")
+  #Match.create!(requester: u, partner: john, want_match: false)
+ end
+
 user6 = User.create!(email: "#{5}test@test.se", password: "test123", name: "Sofia", interests: ["Gardening", "Working Out", "Movies", "Partying", "Meditation", "Yoga"], age: 25, gender: "Female",
 biography: biography.sample, preferred_age: 25, preferred_gender: "Male")
 

@@ -12,6 +12,7 @@ class RelationshipsController < ApplicationController
   def destroy
     @relationship = Relationship.find(params[:id])
     @relationship.destroy
+    redirect_to relationships_path
   end
 
   def decrease_affinity

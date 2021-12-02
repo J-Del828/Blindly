@@ -1,4 +1,14 @@
 <div class="content-container">
+
+  <div class="chat-buttons-top">
+    <% if current_user.id == @relationship.partner_1.id %>
+      <div><%= link_to "#{Relationship.find(params[:id]).partner_2.name}'s profile", profile_path(user_id: Relationship.find(params[:id]).partner_2.id), class: "chat-buttons view-profile-link" %></div>
+    <% elsif current_user.id == @relationship.partner_2.id %>
+      <div><%= link_to "#{Relationship.find(params[:id]).partner_1.name}'s profile", profile_path(user_id: Relationship.find(params[:id]).partner_1.id), class: "chat-buttons view-profile-link" %></div>
+    <% end %>
+    <div><%= link_to "Unmatch", relationship_path, method: :delete, class: "chat-buttons delete-match-link" %></div>
+  </div>
+
   <div class="affinity-layout mb-2">
     <%# raise %>
     <div><%= link_to "", decrease_affinity_relationship_path(@relationship), method: :patch, class: "fas fa-caret-right affinity-button-minus affinity-button" %></div>
@@ -21,7 +31,7 @@
       <%= f.input :content,
                   class: "chat-form-field text-center",
                   label: false, placeholder: "Say something!" %>
-      <%= f.submit class: "msg-submit mt-0" %>
+      <%= f.submit class: "msg-submit mt-0", value: "Send" %>
     <% end %>
   </div>
 </div>

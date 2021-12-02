@@ -1,35 +1,47 @@
 <div class='container'>
   <div class='wrapper'>
     <h5>Interests</h5>
-
-      <%= simple_form_for(current_user, url: profile_path) do |f| %>
-        <div class='mb-3 card-interests'>
-          <%= f.input :interests,:collection => User::INTERESTS,:label => false ,:include_blank => false, as: :check_boxes, input_html: { class: "tag-selector" },
+    <%= simple_form_for(current_user, url: profile_path) do |f| %>
+      <div class='mb-3 card-interests'>
+        <%= f.input :interests,:collection => User::INTERESTS,:label => false ,:include_blank => false, as: :check_boxes, input_html: { class: "tag-selector" },
                   item_wrapper_class: 'tag-item', include_hidden: false %>
-
-        </div>
-        <%= f.input :age,
+      </div>
+      <%= f.input :age,
                             label: "Age",
                             autofocus: true,
                             input_html: { class: 'input_field' }%>
-        <%= f.input :preferred_age, :collection => ["18-22","22-26","26-30","30-34","34-38"],
-                            label: "preferred age",
+      <%= f.input :preferred_age, :collection => ["18-22","22-26","26-30","30-34","34-38"],
+                            label: "Preferred age",
                             autofocus: true,
                             input_html: { class: 'input_field' }%>
+<<<<<<< HEAD
+      <%= f.input :gender, :collection => ["male", "female"],
+                            label: "Your Gender",
+                            autofocus: true,
+                            input_html: { autocomplete: "Your Gender", class: 'input_field' }%>
+      <%= f.input :preferred_gender, :collection => ["male", "female"],
+                            label: "Preferred Gender",
+=======
         <%= f.input :gender, :collection => ["Male", "Female"],
                             label: "Your Gender",
                             autofocus: true,
                             input_html: { autocomplete: "Your Gender", class: 'input_field' }%>
         <%= f.input :preferred_gender, :collection => ["Male", "Female"],
                             label: "Preffered Gender",
+>>>>>>> 551e52870e50457a68cf89c0ca5ec5ff875a7b13
                             autofocus: true,
                             input_html: { autocomplete: "Preffered Gender", class: 'input_field' }%>
-        <%= f.input :biography,
+      <%= f.input :biography,
                             label: "Biography",
                             autofocus: true,
                             input_html: { class: 'input_field' }%>
+<<<<<<< HEAD
+      <%= f.submit "save profile", class:'submit-button-btn btn-success' %>
+    <% end %>
+=======
 
                   <%= f.submit "save profile", class:'btn-save' %>
         <% end %>
+>>>>>>> 551e52870e50457a68cf89c0ca5ec5ff875a7b13
   </div>
 </div>

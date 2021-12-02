@@ -1,0 +1,32 @@
+.no-border {
+  border: 0 !important;
+  color: purple;
+  animation: spinning 2s ease-in-out;
+}
+@keyframes spinning {
+  from {
+    transform: rotateY(0);
+  }
+  to {
+    transform: rotateY(900deg);
+  }
+}
+.swal2-popup {
+  border-radius: 30px;
+}
+.swal2-styled.swal2-confirm {
+  border: 0;
+  border-radius: 0.25em;
+  background: initial;
+  background-color: purple;
+  color: #fff;
+  font-size: 1em;
+}
+.swal2-styled.swal2-cancel {
+  border: 0;
+  border-radius: 0.25em;
+  background: initial;
+  /* background-color: #6e7881; */
+  color: #6e7881;
+  font-size: 1em;
+}

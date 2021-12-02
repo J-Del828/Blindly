@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :matches
   has_many :relationships
+  has_one_attached :photo
   validates :name, :age, :gender, presence: true
 
   before_validation :add_default_array

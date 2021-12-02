@@ -13,7 +13,11 @@
           <div class="matching-percentage">
             <h4><strong><%= partner.matching_percentage %>%</strong></h4>
           </div>
-          <img src="https://elbespurling.com/tbm/wp-content/uploads/2019/02/NwUcCmG.png" class="card-trip-user avatar-bordered" />
+          <% if partner.photo.attached? %>
+            <%= cl_image_tag partner.photo.key, class: "card-trip-user avatar-bordered" %>
+          <% else %>
+            <img src="https://elbespurling.com/tbm/wp-content/uploads/2019/02/NwUcCmG.png" class="card-trip-user avatar-bordered" />
+          <% end %>
           <div class="card-trip-infos">
             <div>
               <h2><%= partner.name %>, <%= partner.age %></h2>

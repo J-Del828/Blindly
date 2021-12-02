@@ -26,6 +26,7 @@
                             label: "Biography",
                             autofocus: true,
                             input_html: { class: 'input_field' }%>
+      <%= f.input :photo, as: :file %>
       <%= f.submit "save profile", class:'btn-save' %>
     <% end %>
   </div>

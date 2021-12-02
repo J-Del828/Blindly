@@ -135,7 +135,10 @@ function createMatch(form, card) {
           Swal.fire({
             title: "It's a match!",
             text: `Do you want to visit their profile?`,
-            icon: 'success',
+            iconHtml: '<i class="fas fa-heart"></i>',
+            customClass: {
+              icon: 'no-border'
+            },
             confirmButtonText: `<a href='${userURL}' class="text-light" <strong>View profile</strong></a>`,
             showCancelButton: true,
             cancelButtonText: `<strong>Keep browsing</strong>`,

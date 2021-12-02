@@ -1,6 +1,11 @@
-  class PotentialPartnersController < ApplicationController
+class PotentialPartnersController < ApplicationController
   def index
-    @potential_partners = current_user.potential_partners
+    if current_user.preferred_age? && current_user.preferred_gender?
+      @potential_partners = current_user.potential_partners
+    else
+      flash.notice = "Please specify your preferred age & gender"
+      redirect_to profile_path
+    end
   end
 
   # user = User.find()

@@ -7,6 +7,8 @@ class User < ApplicationRecord
   has_many :relationships
   validates :name, :age, :gender, presence: true
 
+  before_validation :add_default_array
+
   INTERESTS = ["Dancing", "Cooking", "Baking", "Gardening", "Photography", "Painting", "Drawing", "Singing", "Reading",
                "Cycling", "Volunteering", "Hiking", "Working Out", "Traveling", "Finance", "Investing", "Meditation", "Yoga", "Sports",
                "Clubbing", "Partying", "Technology", "Movies", "Series"]
@@ -33,5 +35,12 @@ class User < ApplicationRecord
       "partner_1_id = :user_id OR partner_2_id = :user_id",
       user_id: id
     )
+  end
+
+  private
+
+  def add_default_array
+    return if interests
+    self.interests = []
   end
 end

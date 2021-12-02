@@ -2,7 +2,7 @@
   <div>
     <div class="logo-image" style="background-image: url(<%= image_path('blindly-logo-white.png') %>);"></div>
     <%# <h1><strong>Blindly</strong></h1> %>
-    <h5 class="mb-3">Be your own matchmaker! </h5>
+    <h5 class="mb-3 tag-line">Be your own matchmaker! </h5>
     <%= if !user_signed_in?
       link_to new_user_registration_path do %>
       <button type='button' class='btn btn-outline-light btn-lg mb-4'>Sign Up</button>

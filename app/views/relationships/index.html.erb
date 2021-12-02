@@ -4,21 +4,27 @@
       <%= link_to relationship_path(relationship) do %>
         <div class="card-product" style="background-image: linear-gradient(to right, <%= relationship.affinity_color %>, <%= relationship.affinity_color(saturation: "90%", luminosity: "80%") %>);">
           <div class="chat-pic-div">
-            <%= image_tag "pp.png", class: "chat-pic" %>
+            <% if current_user.id == relationship.partner_1.id && relationship.partner_2.photo.attached? %>
+              <%= cl_image_tag relationship.partner_2.photo.key, class: "chat-pic" %>
+            <% elsif current_user.id == relationship.partner_2.id && relationship.partner_1.photo.attached? %>
+              <%= cl_image_tag relationship.partner_1.photo.key, class: "chat-pic"  %>
+            <% else  %>
+              <%= image_tag "pp.png", class: "chat-pic" %>
+            <% end %>
           </div>
-        <div class="card-product-infos">
-          <% if current_user.id == relationship.partner_1.id  %>
-            <h2><%= relationship.partner_2.name %></h2>
-          <% else %>
-            <h2><%= relationship.partner_1.name %></h2>
-          <% end %>
-          <% if relationship.messages.last %>
-            <p> <%= relationship.messages.last.content %> </p>
-          <% else %>
-            <p><i> You have not started your conversation </i></p>
-          <% end %>
+          <div class="card-product-infos">
+            <% if current_user.id == relationship.partner_1.id  %>
+              <h2><%= relationship.partner_2.name %></h2>
+            <% else %>
+              <h2><%= relationship.partner_1.name %></h2>
+            <% end %>
+            <% if relationship.messages.last %>
+              <p> <%= relationship.messages.last.content %> </p>
+            <% else %>
+              <p><i> You have not started your conversation </i></p>
+            <% end %>
+          </div>
         </div>
-      </div>
       <% end %>
     <% end %>
   </div>

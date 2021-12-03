@@ -1,3 +1,7 @@
+.chats-container {
+    height: 75vh;
+}
+
 .msg-form {
     margin-top: 2px;
     background-color: #ffffff;
@@ -29,7 +33,7 @@ div#msg-container {
 
 #messages {
     padding: 8px;
-    height: 450px;
+    height: 400px;
     width: 95vw;
     overflow: scroll;
     --tw-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);

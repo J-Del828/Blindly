@@ -40,27 +40,48 @@ biography =   ["Subtly charming music aficionado. Lifelong alcohol fan. Avid ent
 
 user2 = User.create!(email: "#{1}test@test.se", password: "test123", name: "Jane", interests: ["Drawing", "Working Out", "Movies", "Meditation", "Yoga"], age: 25, gender: "Female",
 biography: biography.sample, preferred_age: 25, preferred_gender: "Male")
+file2 = File.open(Rails.root.join("db/fixtures/users/bm5.png"))
+user2.photo.attach(io: file2, filename: 'bm5.png', content_type: 'image/png')
+user2.save
 
 user3 = User.create!(email: "#{2}test@test.se", password: "test123", name: "Aurora", interests: ["Gardening", "Working Out", "Movies", "Partying", "Meditation", "Yoga"], age: 25, gender: "Female",
 biography: biography.sample, preferred_age: 25, preferred_gender: "Male")
-
-user4 = User.create!(email: "#{3}test@test.se", password: "test123", name: "Jasmine", interests: ["Drawing", "Working Out", "Movies", "Partying", "Meditation", "Yoga"], age: 25, gender: "Female",
-biography: biography.sample, preferred_age: 25, preferred_gender: "Male")
+file3 = File.open(Rails.root.join("db/fixtures/users/bm7.png"))
+user3.photo.attach(io: file3, filename: 'bm7.png', content_type: 'image/png')
+user3.save
 
 user5 = User.create!(email: "#{4}test@test.se", password: "test123", name: "Angel", interests: ["Drawing", "Working Out", "Movies", "Meditation", "Yoga"], age: 25, gender: "Female",
 biography: biography.sample, preferred_age: 25, preferred_gender: "Male")
+file5 = File.open(Rails.root.join("db/fixtures/users/bm8.png"))
+user5.photo.attach(io: file5, filename: 'bm8.png', content_type: 'image/png')
+user5.save
+
+user4 = User.create!(email: "#{3}test@test.se", password: "test123", name: "Jasmine", interests: ["Drawing", "Working Out", "Movies", "Partying", "Meditation", "Yoga"], age: 25, gender: "Female",
+biography: biography.sample, preferred_age: 25, preferred_gender: "Male")
+file4 = File.open(Rails.root.join("db/fixtures/users/bm9.png"))
+user4.photo.attach(io: file4, filename: 'bm9.png', content_type: 'image/png')
+user4.save
+
 
 4.times do |n|
   u = User.create(email: "#{n + 200}test@test.se", password: "test123", name: female_names.sample, interests: User::INTERESTS.sample(rand(5..10)), age: (20..30).to_a.sample, gender: "Female",
   biography: biography.sample, preferred_age: (20..30).to_a.sample, preferred_gender: "Male")
   #Match.create!(requester: u, partner: john, want_match: false)
- end
+
+end
 
 user6 = User.create!(email: "#{5}test@test.se", password: "test123", name: "Sofia", interests: ["Gardening", "Working Out", "Movies", "Partying", "Meditation", "Yoga"], age: 25, gender: "Female",
 biography: biography.sample, preferred_age: 25, preferred_gender: "Male")
+file6 = File.open(Rails.root.join("db/fixtures/users/bm10.png"))
+user6.photo.attach(io: file6, filename: 'bm10.png', content_type: 'image/png')
+user6.save
 
 user7 = User.create!(email: "#{6}test@test.se", password: "test123", name: "Marie", interests: ["Drawing", "Working Out", "Movies", "Partying", "Meditation", "Yoga"], age: 25, gender: "Female",
 biography: biography.sample, preferred_age: 25, preferred_gender: "Male")
+file7 = File.open(Rails.root.join("db/fixtures/users/bm11.png"))
+user7.photo.attach(io: file7, filename: 'bm11.png', content_type: 'image/png')
+user7.save
+
 
 
 Match.create!(requester_id: john.id, partner_id: user2.id, want_match: true)

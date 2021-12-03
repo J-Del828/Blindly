@@ -1,5 +1,5 @@
 <div class="convos-container">
-  <div>
+  <div class="relationships-container">
     <% @relationships.each do |relationship| %>
       <%= link_to relationship_path(relationship) do %>
         <div class="card-product" style="background-image: linear-gradient(to right, <%= relationship.affinity_color %>, <%= relationship.affinity_color(saturation: "90%", luminosity: "80%") %>);">

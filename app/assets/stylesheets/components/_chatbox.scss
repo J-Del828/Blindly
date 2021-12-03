@@ -28,7 +28,8 @@ div#msg-container {
 }
 
 #messages {
-    height: 490px;
+    padding: 8px;
+    height: 450px;
     width: 95vw;
     overflow: scroll;
     --tw-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);

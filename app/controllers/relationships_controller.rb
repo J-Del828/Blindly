@@ -4,7 +4,7 @@ class RelationshipsController < ApplicationController
   end
 
   def show
-    @relationship = Relationship.find(params[:id)
+    @relationship = Relationship.find(params[:id])
     # @message = Message.find_by(relationship_id: @relationship.id)
     @message = Message.new
   end

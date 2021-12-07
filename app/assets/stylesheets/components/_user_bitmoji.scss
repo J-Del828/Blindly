@@ -29,6 +29,7 @@ body {
     align-items: center;
     justify-content: space-around;
     align-items: baseline;
+    overflow: scroll;
 }
 
 h1 {
@@ -76,7 +77,6 @@ h5 {
     background-color: rgb(243, 243, 243);
     border-radius: 20px;
     padding: 8px;
-    overflow: scroll;
 }
 
 .fa-star {

@@ -1,59 +1,57 @@
 .card-interests {
-display: flex;
-width: 90%;
-display: flow-root;
-margin-right: auto;
-margin-left: 60px;
+    display: flex;
+    width: 90%;
+    display: flow-root;
+    margin-right: auto;
+    margin-left: 60px;
 }
 
 .user_interests {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 0 auto;
 }
 
 .wrapper {
-  background-color: #f9f8fa;
-  border-radius: 5px;
-  padding: 10px;
-
+    background-color: #f9f8fa;
+    border-radius: 5px;
+    padding: 10px;
 }
 
 .btn-save {
-  display: flex;
-margin-left: auto;
-margin-right: auto;
-background-color: #bbaeeb;
-border: 1px solid rgb(148, 143, 143);
-margin-bottom: 5px;
-border-radius: 2px;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #bbaeeb;
+    border: 1px solid rgb(148, 143, 143);
+    margin-bottom: 5px;
+    border-radius: 2px;
 }
 
-.btn-save:click{
-  opacity: 0.5;
-  background-color: #dcd9e4;
+.btn-save:click {
+    opacity: 0.5;
+    background-color: #dcd9e4;
 }
 
 h5 {
-  margin-left: 5px;
-  margin-top: 5px;
+    //margin-left: 5px;
+    margin-top: 5px;
 }
 
 ul {
-  display:inline-block;
-  column-count: 2;
-  margin-bottom: 0%;
+    display: inline-block;
+    column-count: 2;
+    margin-bottom: 0%;
 }
 
-.col-form-label{
-  display: none !important;
+.col-form-label {
+    display: none !important;
 }
 
 .form-control {
-border-radius: 5px;
+    border-radius: 5px;
 }
 
 .input_field {
-background-color:#f1edf18f;
-
+    background-color: #f1edf18f;
 }

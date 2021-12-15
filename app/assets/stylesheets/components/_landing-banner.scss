@@ -1,6 +1,6 @@
 .banner {
-    //min-height: calc(90vh - 86px - 60px);
-    height: 600px;
+    min-height: calc(80vh - 86px - 60px);
+    //height: 600px;
     background-size: cover;
     background-position: bottom;
     padding: 10px 0;
@@ -19,7 +19,7 @@
 
 .blindly-path {
     margin-bottom: 8px;
-    color: rgb(248, 214, 207);
+    color: rgb(235, 216, 110);
     /*box-shadow: 0px 4px 4px black;*/
     width: 100%;
     /*#FDFF8F;*/
@@ -38,7 +38,7 @@
     color: white;
     font-size: 25px;
     margin-bottom: 30px;
-    /*box-shadow: 0px 5px 5px black;*/
+    //box-shadow: 0px 5px 5px black;
 }
 
 .banner h6 {
